@@ -1,0 +1,190 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-header {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-header p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-header .botao {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0056b3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.hero-header .botao:hover {
+    background: #003f7f;
+}
+
+.barra-azul,
+.barra-azul-2 {
+    width: 100%;
+    height: 4px;
+    background: #007bff;
+    margin: 20px 0;
+}
+
+.servicos {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.servicos h1,
+.servicos h3 {
+    margin-bottom: 20px;
+}
+
+.servicos .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.servico-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.servico-card:hover {
+    transform: scale(1.05);
+}
+
+.sobre-mim {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.sobre-mim .foto-container {
+    flex: 1;
+    text-align: center;
+}
+
+.sobre-mim .foto {
+    max-width: 300px;
+    border-radius: 50%;
+}
+
+.sobre-mim .descricao-pessoal {
+    flex: 2;
+    padding: 20px;
+}
+
+.sobre-mim h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.saiba-mais,
+.localizacao,
+.blog,
+.contatos {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.saiba-mais h2,
+.localizacao h2,
+.blog h2,
+.contatos h1 {
+    margin-bottom: 10px;
+}
+
+.saiba-mais p,
+.localizacao p,
+.blog p {
+    margin-bottom: 20px;
+}
+
+.saiba-mais .botao,
+.contatos .botao {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.saiba-mais .botao:hover,
+.contatos .botao:hover {
+    background: #0056b3;
+}
+
+.mapa-container iframe {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.footer {
+    background: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.alert {
+    display: none;
+    margin-top: 20px;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}

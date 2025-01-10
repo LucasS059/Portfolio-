@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Portfólio FSALES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+</head>
+
+<body>
+    <header class="hero-header">
+        <div class="container">
+            <div class="hero-content text-center">
+                <div class="logo mb-4">
+                    <img src="/Images/logo.jpeg" alt="Logo" class="img-fluid">
+                </div>
+                <h1>Bem-vindo ao Meu Portfólio</h1>
+                <p>Sou Francisco Arnaldo Sales Barboza, desenvolvedor web e advogado com foco em soluções criativas e
+                    eficazes.</p>
+                <a href="#projetos" class="botao">Veja meus projetos</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="barra-azul"></div>
+
+    <main class="container">
+        <section class="sobre-mim">
+            <div class="foto-container">
+                <img src="/Images/perfil.jpg" alt="Minha Foto" class="foto">
+            </div>
+            <div class="descricao-pessoal">
+                <h2>Sobre Mim</h2>
+                <div class="barra-azul-2"></div>
+                <p>Formado em Direito pela Universidade de São Bernardo do Campo em 2023, com paixão por desenvolvimento
+                    web e soluções digitais. Combino experiência jurídica e habilidades tecnológicas para criar projetos
+                    inovadores e personalizados.</p>
+            </div>
+        </section>
+
+        <section class="servicos" id="habilidades">
+            <h1>Minhas Habilidades</h1>
+            <div class="cards-container row">
+                <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
+                    <div class="servico-card">
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Crio websites responsivos e otimizados utilizando HTML, CSS, JavaScript e frameworks
+                            modernos.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
+                    <div class="servico-card">
+                        <h3>Design Responsivo</h3>
+                        <p>Habilidades em design adaptativo para garantir experiências consistentes em todos os
+                            dispositivos.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
+                    <div class="servico-card">
+                        <h3>Consultoria Jurídica</h3>
+                        <p>Atuo como advogado nas áreas de Direito Empresarial, Tributário e Civil, fornecendo soluções
+                            confiáveis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projetos" id="projetos">
+            <h2>Projetos Recentes</h2>
+            <div class="cards-container row">
+                <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
+                    <div class="servico-card">
+                        <h3>Landing Page Advocatícia</h3>
+                        <p>Desenvolvi uma landing page responsiva para um escritório de advocacia.</p>
+                        <a href="#" class="botao">Ver projeto</a>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
+                    <div class="servico-card">
+                        <h3>Blog de Curiosidades</h3>
+                        <p>Blog automatizado com integração de IA para criação de conteúdo dinâmico.</p>
+                        <a href="#" class="botao">Ver projeto</a>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
+                    <div class="servico-card">
+                        <h3>Portfolio Interativo</h3>
+                        <p>Site responsivo e interativo para exibir minhas habilidades e experiências.</p>
+                        <a href="#" class="botao">Ver projeto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contatos" id="contato">
+            <div class="container">
+                <div class="contato-container row">
+                    <div class="informacoes col-12 col-md-6 mb-4">
+                        <h1>Entre em Contato</h1>
+                        <p>Quer saber mais sobre meu trabalho ou colaborar em um projeto? Entre em contato!</p>
+                        <div class="info-item d-flex align-items-center mb-2">
+                            <i class="bi bi-geo-alt-fill me-2" style="font-size: 1.5rem;"></i>
+                            <address>Rua Orense, 41 - Diadema, SP</address>
+                        </div>
+                        <div class="info-item d-flex align-items-center mb-2">
+                            <i class="bi bi-telephone-fill me-2" style="font-size: 1.5rem;"></i>
+                            <p>(11) 4308-5286</p>
+                        </div>
+                        <div class="info-item d-flex align-items-center mb-2">
+                            <i class="bi bi-envelope-fill me-2" style="font-size: 1.5rem;"></i>
+                            <p>contato@exemplo.com</p>
+                        </div>
+                    </div>
+                    <div class="formulario col-12 col-md-6">
+                        <h2>Envie uma Mensagem</h2>
+                        <form id="formContato" action="#" method="POST">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome"
+                                required>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Seu email"
+                                required>
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control" rows="4"
+                                placeholder="Sua mensagem" required></textarea>
+                            <button type="submit" class="botao mt-3">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-2">&copy; 2025 Francisco Arnaldo Sales Barboza | Todos os direitos reservados</p>
+            <p class="mb-0">
+                Rua Orense, 41 - 10º ANDAR - Diadema - SP, 09920-590 | Telefone: (11) 4308-5286 | E-mail:
+                contato@exemplo.com
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
