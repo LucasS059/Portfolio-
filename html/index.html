@@ -18,11 +18,10 @@
         <div class="container">
             <div class="hero-content text-center">
                 <div class="logo mb-4">
-                    <img src="/Images/logo.jpeg" alt="Logo" class="img-fluid">
+                    <img src="/assets/Images/logo.jpeg" alt="Logo" class="img-fluid" width="200">
                 </div>
                 <h1>Bem-vindo ao Meu Portfólio</h1>
-                <p>Sou Francisco Arnaldo Sales Barboza, desenvolvedor web e advogado com foco em soluções criativas e
-                    eficazes.</p>
+                <p>Sou Lucas Silva Barboza, desenvolvedor frontend e backend.</p>
                 <a href="#projetos" class="botao">Veja meus projetos</a>
             </div>
         </div>
@@ -33,63 +32,78 @@
     <main class="container">
         <section class="sobre-mim">
             <div class="foto-container">
-                <img src="/Images/perfil.jpg" alt="Minha Foto" class="foto">
+                <img src="/assets/Images/perfil.jpg" alt="Minha Foto" class="foto">
             </div>
             <div class="descricao-pessoal">
                 <h2>Sobre Mim</h2>
                 <div class="barra-azul-2"></div>
-                <p>Formado em Direito pela Universidade de São Bernardo do Campo em 2023, com paixão por desenvolvimento
-                    web e soluções digitais. Combino experiência jurídica e habilidades tecnológicas para criar projetos
-                    inovadores e personalizados.</p>
+                <p>Eu gosto de tecnologia e do impacto que o desenvolvimento de software pode ter. Programar é uma forma de explorar novas
+                possibilidades e criar soluções inovadoras. Estou sempre em busca de novos desafios para aprimorar minhas habilidades e
+                desenvolver soluções criativas.</p>
             </div>
         </section>
 
-        <section class="servicos" id="habilidades">
+        <section class="minhas-habilidades" id="habilidades">
             <h1>Minhas Habilidades</h1>
             <div class="cards-container row">
+                <!-- Card: Desenvolvimento Web -->
                 <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
-                    <div class="servico-card">
+                    <div class="geral-card">
                         <h3>Desenvolvimento Web</h3>
-                        <p>Crio websites responsivos e otimizados utilizando HTML, CSS, JavaScript e frameworks
-                            modernos.</p>
+                        <p>Especialista na criação de websites modernos, responsivos e otimizados, utilizando HTML, CSS,
+                            JavaScript e frameworks como Bootstrap.</p>
                     </div>
                 </div>
+        
+                <!-- Card: Desenvolvimento de Aplicativos -->
                 <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
-                    <div class="servico-card">
+                    <div class="geral-card">
+                        <h3>Desenvolvimento de Aplicativos</h3>
+                        <p>Desenvolvo aplicativos eficientes e cross-platform com Flutter, garantindo alta performance em
+                            dispositivos Android e iOS.</p>
+                    </div>
+                </div>
+        
+                <!-- Card: Versionamento com Git -->
+                <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
+                    <div class="geral-card">
+                        <h3>Versionamento de Código</h3>
+                        <p>Experiência com Git e GitHub para controle de versão, colaboração em equipe e entrega de projetos de
+                            alta qualidade.</p>
+                    </div>
+                </div>
+        
+                <!-- Card: Design Responsivo -->
+                <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
+                    <div class="geral-card">
                         <h3>Design Responsivo</h3>
-                        <p>Habilidades em design adaptativo para garantir experiências consistentes em todos os
-                            dispositivos.</p>
-                    </div>
-                </div>
-                <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
-                    <div class="servico-card">
-                        <h3>Consultoria Jurídica</h3>
-                        <p>Atuo como advogado nas áreas de Direito Empresarial, Tributário e Civil, fornecendo soluções
-                            confiáveis.</p>
+                        <p>Habilidade em criar interfaces adaptáveis para proporcionar uma experiência consistente em diferentes
+                            dispositivos e tamanhos de tela.</p>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <section class="projetos" id="projetos">
             <h2>Projetos Recentes</h2>
             <div class="cards-container row">
                 <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
-                    <div class="servico-card">
+                    <div class="geral-card">
                         <h3>Landing Page Advocatícia</h3>
                         <p>Desenvolvi uma landing page responsiva para um escritório de advocacia.</p>
                         <a href="#" class="botao">Ver projeto</a>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
-                    <div class="servico-card">
+                    <div class="geral-card">
                         <h3>Blog de Curiosidades</h3>
                         <p>Blog automatizado com integração de IA para criação de conteúdo dinâmico.</p>
                         <a href="#" class="botao">Ver projeto</a>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
-                    <div class="servico-card">
+                    <div class="geral-card">
                         <h3>Portfolio Interativo</h3>
                         <p>Site responsivo e interativo para exibir minhas habilidades e experiências.</p>
                         <a href="#" class="botao">Ver projeto</a>
@@ -106,15 +120,11 @@
                         <p>Quer saber mais sobre meu trabalho ou colaborar em um projeto? Entre em contato!</p>
                         <div class="info-item d-flex align-items-center mb-2">
                             <i class="bi bi-geo-alt-fill me-2" style="font-size: 1.5rem;"></i>
-                            <address>Rua Orense, 41 - Diadema, SP</address>
-                        </div>
-                        <div class="info-item d-flex align-items-center mb-2">
-                            <i class="bi bi-telephone-fill me-2" style="font-size: 1.5rem;"></i>
-                            <p>(11) 4308-5286</p>
+                            <address>Diadema, SP</address>
                         </div>
                         <div class="info-item d-flex align-items-center mb-2">
                             <i class="bi bi-envelope-fill me-2" style="font-size: 1.5rem;"></i>
-                            <p>contato@exemplo.com</p>
+                            <p>Lucasbarboza299@gmail.com</p>
                         </div>
                     </div>
                     <div class="formulario col-12 col-md-6">
@@ -139,10 +149,9 @@
 
     <footer class="footer">
         <div class="container">
-            <p class="mb-2">&copy; 2025 Francisco Arnaldo Sales Barboza | Todos os direitos reservados</p>
+            <p class="mb-2">&copy; 2025 Lucas Silva Barboza | Todos os direitos reservados</p>
             <p class="mb-0">
-                Rua Orense, 41 - 10º ANDAR - Diadema - SP, 09920-590 | Telefone: (11) 4308-5286 | E-mail:
-                contato@exemplo.com
+                Diadema - SP | E-mail: Lucasbarboza299@gmail.com
             </p>
         </div>
     </footer>

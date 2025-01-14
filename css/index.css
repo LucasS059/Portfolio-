@@ -57,24 +57,24 @@ body {
     margin: 20px 0;
 }
 
-.servicos {
+.minhas-habilidades {
     text-align: center;
     margin: 40px 0;
 }
 
-.servicos h1,
-.servicos h3 {
+.minhas-habilidades h1,
+.minhas-habilidades h3 {
     margin-bottom: 20px;
 }
 
-.servicos .cards-container {
+.minhas-habilidades .cards-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-.servico-card {
+.geral-card {
     background: #f8f9fa;
     padding: 20px;
     border-radius: 10px;
@@ -82,7 +82,7 @@ body {
     transition: transform 0.3s;
 }
 
-.servico-card:hover {
+.geral-card:hover {
     transform: scale(1.05);
 }
 
@@ -99,8 +99,8 @@ body {
 }
 
 .sobre-mim .foto {
-    max-width: 300px;
-    border-radius: 50%;
+    max-width: 180px;
+    border-radius: 5%;
 }
 
 .sobre-mim .descricao-pessoal {
