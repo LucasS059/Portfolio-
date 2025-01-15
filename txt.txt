@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Portfólio FSALES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+</head>
+
+<body>
+    <header class="hero-header">
+        <div class="container">
+            <div class="hero-content text-center">
+                <div class="logo mb-4">
+                    <img src="/assets/Images/logo.jpeg" alt="Logo" class="img-fluid" width="200">
+                </div>
+                <h1>Bem-vindo ao Meu Portfólio</h1>
+                <p>Sou Lucas Silva Barboza, desenvolvedor frontend e backend.</p>
+                <a href="#projetos" class="botao">Veja meus projetos</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="barra-azul"></div>
+
+    <main class="container">
+        <section class="sobre-mim">
+            <div class="foto-container">
+                <img src="/assets/Images/perfil.jpg" alt="Minha Foto" class="foto">
+            </div>
+            <div class="descricao-pessoal">
+                <h2>Sobre Mim</h2>
+                <div class="barra-azul-2"></div>
+                <p>Eu gosto de tecnologia e do impacto que o desenvolvimento de software pode ter. Programar é uma forma de explorar novas
+                possibilidades e criar soluções inovadoras. Estou sempre em busca de novos desafios para aprimorar minhas habilidades e
+                desenvolver soluções criativas.</p>
+            </div>
+        </section>
+
+        <section class="minhas-habilidades" id="habilidades">
+            <h1>Minhas Habilidades</h1>
+            <div class="cards-container row">
+                <!-- Card: Desenvolvimento Web -->
+                <div class="col-md-9 col-sm-9 col-lg-4 mb-4">
+                    <div class="geral-card">
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Tenho noção e dedicação na criação de websites modernos, responsivos e otimizados, utilizando HTML, CSS, JavaScript e frameworks como Bootstrap.</p>
+                    </div>
+                </div>
+        
+                <!-- Card: Desenvolvimento de Aplicativos -->
+                <div class="col-md-9 col-sm-1 col-lg-4 mb-4">
+                    <div class="geral-card">
+                        <h3>Desenvolvimento de Aplicativos</h3>
+                        <p>Desenvolvo aplicativos eficientes e multiplataforma com Flutter, garantindo uma excelente usabilidade para os usuários em dispositivos Android e iOS.</p>
+                    </div>
+                </div>
+        
+                <!-- Card: Versionamento com Git -->
+                <div class="col-md-9 col-sm-9 col-lg-4 mb-4">
+                    <div class="geral-card">
+                        <h3>Versionamento de Código</h3>
+                        <p>Experiência com Git e GitHub para controle de versão, colaboração em equipe e entrega de projetos de
+                            alta qualidade.</p>
+                    </div>
+                </div>
+        
+                <!-- Card: UX/UI Design -->
+                <div class="col-md-9 col-sm-9 col-lg-4 mb-4">
+                    <div class="geral-card">
+                        <h3>UX/UI Design</h3>
+                        <p>Interesse em criar interfaces intuitivas e atraentes, com foco na experiência do usuário e nas melhores
+                            práticas de design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projetos" id="projetos">
+            <h2>Projetos Recentes</h2>
+            <div class="cards-container row">
+                <!-- Card: Landing Page Advocatícia -->
+                <div class="col-md-12 col-sm-12 col-lg-6 mb-4">
+                    <div class="geral-card">
+                        <h3>Landing Page Advocatícia</h3>
+                        <p>Desenvolvi uma landing page responsiva para um escritório de advocacia.</p>
+                        <a href="https://site-fsales.onrender.com/" class="botao">Ver projeto</a>
+                    </div>
+                </div>
+        
+                <!-- Card: Aplicativo de Gestão de Saúde -->
+                <div class="col-md-12 col-sm-12 col-lg-6 mb-4">
+                    <div class="geral-card">
+                        <h3>Aplicativo de Gestão de Saúde</h3>
+                        <p>Aplicativo desenvolvido para o São Camilo, facilitando o gerenciamento de informações de saúde.</p>
+                        <a href="#" class="botao">Ver projeto</a>
+                    </div>
+                </div>
+        
+                <!-- Card: Site para Missão Ambiental -->
+                <div class="col-md-12 col-sm-12 col-lg-6 mb-4">
+                    <div class="geral-card">
+                        <h3>Site para Missão Ambiental</h3>
+                        <p>Desenvolvimento de um site para promover a conscientização ambiental e sustentabilidade.</p>
+                        <a href="#" class="botao">Ver projeto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contatos" id="contato">
+            <div class="container">
+                <div class="contato-container row">
+                    <div class="informacoes col-12 col-md-6 mb-4">
+                        <h1>Entre em Contato</h1>
+                        <p>Quer saber mais sobre meu trabalho ou colaborar em um projeto? Entre em contato!</p>
+                        <div class="info-item d-flex align-items-center mb-2">
+                            <i class="bi bi-geo-alt-fill me-2" style="font-size: 1.5rem;"></i>
+                            <address>Diadema, SP</address>
+                        </div>
+                        <div class="info-item d-flex align-items-center mb-2">
+                            <i class="bi bi-envelope-fill me-2" style="font-size: 1.5rem;"></i>
+                            <p>Lucasbarboza299@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="formulario col-12 col-md-6">
+                        <h2>Envie uma Mensagem</h2>
+                        <form id="formContato" action="#" method="POST">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome"
+                                required>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Seu email"
+                                required>
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control" rows="4"
+                                placeholder="Sua mensagem" required></textarea>
+                            <button type="submit" class="botao mt-3">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-2">&copy; 2025 Lucas Silva Barboza | Todos os direitos reservados</p>
+            <p class="mb-0">
+                Diadema - SP | E-mail: Lucasbarboza299@gmail.com
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
