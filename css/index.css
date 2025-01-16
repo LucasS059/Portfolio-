@@ -38,40 +38,72 @@ body {
     margin: 10px auto;
 }
 
+/* Geral */
 .hero-header {
-    height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px 40px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    background-color: #4a90e2;
-    /* Gradiente de fundo */
-    color: white;
-    /* Cor do texto */
-    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Container do conteúdo */
+.header-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
 .logo img {
-    border-radius: 10%;
-    /* Bordas arredondadas para o logo */
-    object-fit: cover;
+    max-height: 50px;
+    object-fit: contain;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
+/* Botões */
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.header-buttons .btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 20px 0;
+    transition: background-color 0.3s ease;
 }
 
-.hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    line-height: 1.6;
+.header-buttons .btn:hover {
+    background-color: #0056b3;
 }
 
+/* Estilo dos ícones sociais */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+    /* Espaçamento dos ícones em relação aos botões */
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+    /* Leve aumento ao passar o mouse */
+    opacity: 0.8;
+}
 .botao {
     background-color: #fff;
     /* Cor do botão */
@@ -120,6 +152,7 @@ body {
     transform: scale(1.1);
     /* Aumenta o ícone ao passar o mouse */
 }
+
 /*---------------- CSS Específico para Sobre Mim ----------------*/
 .sobre-mim {
     background-image: url('/assets/Images/teclado.jpg');
