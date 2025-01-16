@@ -15,7 +15,50 @@
 </head>
 
 <body>
+
     <header class="hero-header">
+        <div class="container">
+            <div class="hero-content text-center">
+                <div class="logo mb-4">
+                    <img src="/assets/Images/logo.jpeg" alt="Logo" class="img-fluid" width="200">
+                </div>
+                <h1>Bem-vindo ao Meu Portfólio</h1>
+                <p>Sou Lucas Silva Barboza, desenvolvedor frontend e backend.</p>
+                <a href="#projetos" class="botao">Veja meus projetos</a>
+                <div class="social-icons">
+                    <a href="https://github.com/seu-perfil" target="_blank" class="social-icon">
+                        <img src="/assets/icons/github.svg" alt="GitHub" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" class="social-icon">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" />
+                    </a>
+                    <a href="https://www.instagram.com/seu-perfil" target="_blank" class="social-icon">
+                        <img src="/assets/icons/instagram.svg" alt="Instagram" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="barra-azul"></div>
+    
+    <main class="container">
+        <section class="sobre-mim">
+            <div class="foto-container">
+                <img src="/assets/Images/perfil.jpg" alt="Minha Foto" class="foto">
+            </div>
+            <div class="descricao-pessoal">
+                <h2>Lucas Silva Barboza</h2>
+                <div class="barra-azul-2"></div>
+                <p>Eu gosto de tecnologia e do impacto que o desenvolvimento de software pode ter. Programar é uma forma
+                    de explorar novas possibilidades e criar soluções inovadoras. Estou sempre em busca de novos desafios
+                    para aprimorar minhas habilidades e desenvolver soluções criativas.</p>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- <header class="hero-header">
         <div class="container">
             <div class="hero-content text-center">
                 <div class="logo mb-4">
@@ -31,7 +74,6 @@
     <div class="barra-azul"></div>
 
     <main class="container">
-
         <section class="sobre-mim">
             <div class="foto-container">
                 <img src="/assets/Images/perfil.jpg" alt="Minha Foto" class="foto">
@@ -45,102 +87,81 @@
                     minhas habilidades e
                     desenvolver soluções criativas.</p>
             </div>
-        </section>
-        <section class="servicos">
-            <h1>Minhas Habilidades</h1>
+        </section> -->
+            <div class="barra-azul"></div>
 
+        <section class="habilidades">
+            <h1 class="mb-4" >Minhas Habilidades</h1>
             <div class="container">
                 <div class="cards-container row">
-                    <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
-                        <div class="servico-card">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card-habilidades">
                             <h3>Desenvolvimento Web</h3>
-                            <p>Tenho noção e dedicação na criação de websites modernos, responsivos e otimizados,
-                                utilizando HTML, CSS, JavaScript e
-                                frameworks como Bootstrap.</p>
+                            <p>Tenho noção e dedicação na criação de websites modernos, responsivos e otimizados, utilizando
+                                HTML, CSS, JavaScript e frameworks como Bootstrap.</p>
                         </div>
                     </div>
-                    <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
-                        <div class="servico-card">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card-habilidades">
                             <h3>Desenvolvimento de Aplicativos</h3>
                             <p>Desenvolvo aplicativos eficientes e multiplataforma com Flutter, garantindo uma excelente
-                                usabilidade para os
-                                usuários em dispositivos Android e iOS.</p>
+                                usabilidade para os usuários em dispositivos Android e iOS.</p>
                         </div>
                     </div>
-                    <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
-                        <div class="servico-card">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card-habilidades">
                             <h3>Versionamento de Código</h3>
-                            <p>Experiência com Git e GitHub para controle de versão, colaboração em equipe e entrega de
-                                projetos de alta qualidade.</p>
+                            <p>Experiência com Git e GitHub para controle de versão, colaboração em equipe e entrega de projetos
+                                de alta qualidade.</p>
                         </div>
                     </div>
-                    <div class="col-md-12 col-sm-12 col-lg-12 mb-4">
-                        <div class="servico-card">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card-habilidades">
                             <h3>UX/UI Design</h3>
-                            <p>Interesse em criar interfaces intuitivas e atraentes, com foco na experiência do usuário
-                                e nas melhores
-                                práticas de design.</p>
+                            <p>Interesse em criar interfaces intuitivas e atraentes, com foco na experiência do usuário e nas
+                                melhores práticas de design.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-
-
-
-
+        <div class="barra-azul"></div>
         <section class="certificados" id="certificados">
-            <h1>Certificados</h1>
+            <h1 class="mb-4">Certificados</h1>
             <div class="certificados-container row">
-                <!-- Certificado 1: Desenvolvimento com Flutter -->
-                <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
-                    <div class="certificado-card">
+                <div class="col-md-12 col-sm-12 col-lg-4 mb-4" id="certificados-card">
+                    <div class="card-certificados">
                         <h3>Desenvolvimento de Aplicações Híbridas com Flutter</h3>
                         <p>Certificado de conclusão de 40 horas no Instituto Mauá de Tecnologia.</p>
-                        <a href="/pdf/CC2011-DesenvolvimentodjeAplicacoesHibridjascomFlutter-2024.pdf" target="_blank"
-                            class="btn btn-primary">Visualizar Certificado</a>
-                        <a href="http://www2.maua.br/valida-pae?codigo=B57C-BFA6-0586-FAC4-80A2-E216-8A05-7181"
-                            target="_blank" class="btn btn-secondary">Verificar Autenticidade</a>
+                        <div class="btn-container">
+                            <a href="/pdf/CC2011-DesenvolvimentodjeAplicacoesHibridjascomFlutter-2024.pdf" target="_blank"
+                                class="btn btn-primary">Visualizar Certificado</a>
+                            <a href="http://www2.maua.br/valida-pae?codigo=B57C-BFA6-0586-FAC4-80A2-E216-8A05-7181"
+                                target="_blank" class="btn btn-secondary">Verificar Autenticidade</a>
+                        </div>
                     </div>
                 </div>
-                <!-- Certificado 2: Criação de Jogos 2D com Python -->
-                <div class="col-md-12 col-sm-12 col-lg-4 mb-4">
-                    <div class="certificado-card">
+                <div class="col-md-12 col-sm-12 col-lg-4 mb-4" id="certificados-card">
+                    <div class="card-certificados">
                         <h3>Criação de Jogos 2D através do Python</h3>
                         <p>Certificado de conclusão de 40 horas no Instituto Mauá de Tecnologia.</p>
-                        <a href="/pdf/EN3027-Criacaodjejogos2DatravesdjoPython-2024.pdf" target="_blank"
-                            class="btn btn-primary">Visualizar Certificado</a>
-                        <a href="http://www2.maua.br/valida-pae?codigo=32F8-53AE-0B36-1195-02C4-4F34-81AC-526A"
-                            target="_blank" class="btn btn-secondary">Verificar Autenticidade</a>
+                        <div class="btn-container">
+                            <a href="/pdf/EN3027-Criacaodjejogos2DatravesdjoPython-2024.pdf" target="_blank"
+                                class="btn btn-primary">Visualizar Certificado</a>
+                            <a href="http://www2.maua.br/valida-pae?codigo=32F8-53AE-0B36-1195-02C4-4F34-81AC-526A"
+                                target="_blank" class="btn btn-secondary">Verificar Autenticidade</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        <div class="barra-azul"></div>
         <section>
             <div class="contatos" id="area-contatos">
                 <div class="container">
                     <div class="contato-container row">
-                        <div class="informacoes col-12 col-md-6 mb-4">
-                            <h1>Informações de Contato</h1>
-                            <p>Entre em contato comigo para agendar uma consulta ou obter mais informações. Estou à
-                                disposição para ajudá-lo.</p>
-                            <div class="info-item d-flex align-items-center mb-2">
-                                <i class="bi bi-geo-alt-fill me-2" style="font-size: 1.5rem;"></i>
-                                <address>Rua Orense, 41 - Diadema, SP</address>
-                            </div>
-                            <div class="info-item d-flex align-items-center mb-2">
-                                <i class="bi bi-telephone-fill me-2" style="font-size: 1.5rem;"></i>
-                                <p>(11) 4308-5286</p>
-                            </div>
-                            <div class="info-item d-flex align-items-center mb-2">
-                                <i class="bi bi-envelope-fill me-2" style="font-size: 1.5rem;"></i>
-                                <p>contato@exemplo.com</p>
-                            </div>
-                        </div>
                         <div class="formulario col-12 col-md-6">
-                            <h2>Fale Conosco</h2>
+                            <h2>Fale Comigo</h2>
                             <div id="mensagem-feedback" class="alert" style="margin-top: 20px;"></div>
                             <form id="formContato" action="/formContato" method="POST">
                                 <label for="nome">Nome</label>
@@ -163,11 +184,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p class="mb-2">© 2025 FSALES Advogados | Todos os direitos reservados</p>
-            <p class="mb-0">
-                Rua Orense, 41 - 10º ANDAR - SALA 1018 - Centro, Diadema - SP, 09920-590 |
-                Telefone: (11) 4308-5286 | E-mail: contato@exemplo.com
-            </p>
+            <p>© 2025 Lucas Silva Barboza | Todos os direitos reservados</p>
         </div>
     </footer>
 

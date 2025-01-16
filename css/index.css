@@ -1,198 +1,3 @@
-/* Reset básico
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hero-header {
-    background: #007bff;
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.hero-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.hero-header p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.hero-header .botao {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #0056b3;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.hero-header .botao:hover {
-    background: #003f7f;
-}
-
-.barra-azul,
-.barra-azul-2 {
-    width: 100%;
-    height: 4px;
-    background: #007bff;
-    margin: 20px 0;
-}
-.minhas-habilidades {
-    background-image: url(/assets/Images/teclado.jpg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    margin: 40px 0;
-}
-
-.minhas-habilidades h1,
-.minhas-habilidades h3 {
-    margin-bottom: 20px;
-}
-
-.minhas-habilidades .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.geral-card {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.geral-card:hover {
-    transform: scale(1.05);
-}
-
-.sobre-mim {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 40px 0;
-}
-
-.sobre-mim .foto-container {
-    flex: 1;
-    text-align: center;
-}
-
-.sobre-mim .foto {
-    max-width: 180px;
-    border-radius: 5%;
-}
-
-.sobre-mim .descricao-pessoal {
-    flex: 2;
-    padding: 20px;
-}
-
-.sobre-mim h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.saiba-mais,
-.localizacao,
-.blog,
-.contatos {
-    margin: 40px 0;
-    text-align: center;
-}
-
-.saiba-mais h2,
-.localizacao h2,
-.blog h2,
-.contatos h1 {
-    margin-bottom: 10px;
-}
-
-.saiba-mais p,
-.localizacao p,
-.blog p {
-    margin-bottom: 20px;
-}
-
-.saiba-mais .botao,
-.contatos .botao {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.saiba-mais .botao:hover,
-.contatos .botao:hover {
-    background: #0056b3;
-}
-
-.mapa-container iframe {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.footer {
-    background: #f8f9fa;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.alert {
-    display: none;
-    margin-top: 20px;
-}
-
-.alert-success {
-    background: #d4edda;
-    color: #155724;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.alert-danger {
-    background: #f8d7da;
-    color: #721c24;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.error-message {
-    color: #dc3545;
-    font-size: 0.9rem;
-    margin-top: 5px;
-} */
-
-
 :root {
     --primary-color: #007BFF;
     --secondary-color: #007BFF;
@@ -220,14 +25,17 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.logo {
-    margin: 20px 0 60px;
-    z-index: 3;
+.barra-azul {
+    width: 100%;
+    height: 10px;
+    background-color: var(--primary-color);
 }
 
-.logo img {
-    border-radius: 2%;
-    object-fit: cover;
+.barra-azul-2 {
+    width: 50px;
+    height: 5px;
+    background-color: var(--primary-color);
+    margin: 10px auto;
 }
 
 .hero-header {
@@ -237,15 +45,17 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background-color: #4a90e2;
+    /* Gradiente de fundo */
+    color: white;
+    /* Cor do texto */
+    text-align: center;
 }
 
-
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 100%;
+.logo img {
+    border-radius: 10%;
+    /* Bordas arredondadas para o logo */
+    object-fit: cover;
 }
 
 .hero-content h1 {
@@ -253,15 +63,7 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 20px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero-content h1:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+    margin: 20px 0;
 }
 
 .hero-content p {
@@ -271,76 +73,54 @@ body {
 }
 
 .botao {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    text-decoration: none;
+    background-color: #fff;
+    /* Cor do botão */
+    color: #4a90e2;
+    /* Cor do texto do botão */
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    position: relative;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .botao:hover {
-    background-color: #0056b3;
+    background-color: #4a90e2;
+    /* Cor do botão ao passar o mouse */
+    color: white;
+    /* Cor do texto ao passar o mouse */
     transform: scale(1.05);
+    /* Efeito de aumento ao passar o mouse */
 }
 
-.barra-azul {
-    width: 100%;
-    height: 30px;
-    background-color: var(--primary-color);
-}
-
-.secao-cards {
+.social-icons {
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    padding: 40px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background-color: var(--white);
-    border-radius: 8px;
-    text-align: center;
-    min-height: 300px;
-    display: flex;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-header {
-    padding: 10px;
-}
-
-.card-body {
-    display: flex;
-    align-items: center;
     justify-content: center;
+    /* Centraliza os ícones */
+    margin-top: 20px;
+    /* Espaçamento acima dos ícones */
 }
 
-.card h3 {
-    color: var(--primary-color);
+.social-icon {
+    margin: 0 10px;
+    /* Espaçamento entre os ícones */
 }
 
-.card p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: var(--text-color);
-    max-width: 80%;
-    text-align: center;
+.social-icon img {
+    width: 30px;
+    /* Tamanho dos ícones */
+    height: 30px;
+    /* Tamanho dos ícones */
+    transition: transform 0.3s;
+    /* Efeito de transição ao passar o mouse */
 }
 
-.card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+.social-icon img:hover {
+    transform: scale(1.1);
+    /* Aumenta o ícone ao passar o mouse */
 }
-
+/*---------------- CSS Específico para Sobre Mim ----------------*/
 .sobre-mim {
     background-image: url('/assets/Images/teclado.jpg');
     background-size: cover;
@@ -364,6 +144,15 @@ body {
     z-index: 1;
 }
 
+.foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .foto-container {
     display: flex;
     justify-content: center;
@@ -373,15 +162,6 @@ body {
     height: 200px;
     position: relative;
     z-index: 2;
-}
-
-.foto {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .descricao-pessoal {
@@ -406,228 +186,151 @@ body {
     max-width: 700px;
 }
 
-.servicos {
+/*---------------- CSS Específico para Habilidades ----------------*/
+.habilidades {
+    padding: 2rem;
     background-color: var(--background-color);
-    padding: 40px;
     text-align: center;
 }
 
-.servicos .cards-container {
+.habilidades .cards-container {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    /* Alinha os itens ao topo */
+    gap: 30px;
     flex-wrap: wrap;
 }
 
-.servico-card {
-    margin: 20px;
+.card-habilidades {
     background-color: var(--white);
-    border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    min-height: 300px;
+    width: 100%;
+    height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.servico-card:hover {
-    transform: translateY(-15px);
+.card-habilidades:hover {
+    transform: translateY(-10px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-.servico-card h3 {
-    word-wrap: break-word;
-    max-width: 100%;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.servico-card p {
-    color: var(--text-color);
-    text-align: center;
-    padding: 0 10px;
-}
-
-.saiba-mais {
-    position: relative;
-    background-image: url('/assets/Images/code-notebook.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 60px;
-    text-align: center;
-    color: var(--white);
-}
-
-.saiba-mais::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-}
-
-.saiba-mais h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    z-index: 2;
-    position: relative;
-}
-
-.barra-azul-2 {
-    width: 15%;
-    height: 5px;
-    background-color: var(--primary-color);
-    margin: 10px auto;
-    z-index: 2;
-    position: relative;
-}
-
-.saiba-mais p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 2;
-    position: relative;
-}
-
-.saiba-mais button {
-    padding: 12px 24px;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 2;
-    position: relative;
-}
-
-.saiba-mais button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-.localizacao {
-    padding: 20px 20px;
-    background-color: var(--background-color);
-    text-align: center;
-    color: var(--text-color);
-}
-
-.localizacao .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.localizacao h2 {
-    font-size: 2.5rem;
-    color: var(--black);
-    margin-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.localizacao p {
-    font-size: 1.2rem;
-    color: var(--light-text-color);
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.localizacao address {
+.card-habilidades h3 {
     font-size: 1.5rem;
     color: var(--primary-color);
-    font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
-.localizacao address a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.mapa-container {
-    width: 100%;
-    max-width: 1000px;
-    margin: 30px auto;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
-}
-
-.mapa-container iframe {
-    width: 100%;
-    height: 450px;
-    border-radius: 15px;
-}
-
-.contatos {
-    background-color: #f4f4f4;
-    padding: 20px;
-    background-color: var(--background-color);
-}
-
-.contato-container {
-    justify-content: space-between;
-    margin: 0 auto;
-    background-color: var(--white);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.informacoes {
-    flex: 1;
-    text-align: left;
-}
-
-.informacoes h1 {
-    font-size: 2.5rem;
-    color: var(--text-color);
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.informacoes p {
+.card-habilidades p {
     font-size: 1.1rem;
-    color: var(--light-text-color);
-    margin-bottom: 30px;
     line-height: 1.6;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-.info-item i {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-right: 15px;
-}
-
-.info-item p,
-.info-item address {
-    font-size: 1.2rem;
     color: var(--text-color);
     margin: 0;
+    padding-top: 5px;
+}
+
+/*---------------- CSS Específico para Certificados ----------------*/
+.certificados {
+    padding: 2rem;
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.certificados .certificados-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-certificados {
+    background-color: var(--white);
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-certificados:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-certificados h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.card-certificados p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.card-certificados .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.card-certificados .btn {
+    padding: 10px 20px;
+    /* Tamanho do botão */
+    border: none;
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    font-size: 1rem;
+    color: #fff;
+    /* Cor do texto */
+    text-decoration: none;
+    /* Remove o sublinhado */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Transições suaves */
+}
+
+.card-certificados .btn-primary {
+    background-color: var(--primary -color);
+    /* Cor de fundo do botão primário */
+}
+
+.card-certificados .btn-secondary {
+    background-color: #6c757d;
+    /* Cor de fundo do botão secundário */
+}
+
+.card-certificados .btn-primary:hover {
+    background-color: #0056b3;
+    /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05);
+    /* Efeito de aumento ao passar o mouse */
+}
+
+.card-certificados .btn-secondary:hover {
+    background-color: #5a6268;
+    /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05);
+    /* Efeito de aumento ao passar o mouse */
+}
+
+/*---------------- CSS Específico para contatos ----------------*/
+
+.contatos {
+    padding: 2rem;
+    background-color: var(--background-color);
 }
 
 .formulario {
@@ -674,6 +377,7 @@ body {
     transform: scale(1.05);
 }
 
+/*---------------- CSS Específico para footer ----------------*/
 footer {
     background-color: var(--primary-color);
     padding: 20px;
@@ -684,132 +388,4 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-.blog {
-    position: relative;
-    background-image: url('/Images/espelhos.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 30px;
-    text-align: center;
-    color: var(--white);
-    text-align: center;
-}
-
-.blog::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-}
-
-.blog h2,
-article,
-article h3,
-article p {
-    position: relative;
-    z-index: 2;
-}
-
-.blog h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-.articles-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.articles-container .col-md-4 {
-    display: flex;
-    justify-content: center;
-}
-
-article {
-    background-color: var(--white);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
-}
-
-article:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-article h3 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-article p {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.certificados {
-    padding: 2rem;
-    background-color: var(--background-color);
-    text-align: center;
-}
-
-.certificados-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.certificado-card {
-    background: var(--white);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.certificado-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.certificado-card p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-}
-
-.certificado-card .btn {
-    margin-top: 10px;
-    width: calc(50% - 5px);
-    display: inline-block;
-    text-align: center;
-}
-
-.certificado-card .btn-primary {
-    background-color: var(--primary-color);
-}
-
-.certificado-card .btn-secondary {
-    background-color: var(--secondary-color);
 }
