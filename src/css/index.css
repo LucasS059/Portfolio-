@@ -62,7 +62,7 @@ body {
 }
 
 .sobre-mim {
-    background-image: url('/src/assets/Images/teclado.jpg');
+    background-image: url('/Portfolio-/src/assets/Images/teclado.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -400,6 +400,7 @@ footer p {
     .card-habilidades p {
         font-size: 0.9rem;
     }
+
     .card-certificados h3 {
         font-size: 1.2rem;
     }
@@ -415,4 +416,3 @@ footer p {
 
     }
 }
-
