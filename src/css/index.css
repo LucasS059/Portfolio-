@@ -62,7 +62,7 @@ body {
 }
 
 .sobre-mim {
-    background-image: url('/assets/Images/teclado.jpg');
+    background-image: url('/src/assets/Images/teclado.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
