@@ -128,7 +128,6 @@ body {
     max-width: 700px;
 }
 
-/* Habilidades */
 .habilidades {
     padding: 2rem;
     background-color: var(--background-color);
@@ -149,31 +148,23 @@ body {
     text-align: center;
     width: 100%;
     max-width: 300px;
-    /* Limite de largura */
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Alinha os itens dentro do card */
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
-    /* Garante que nada saia do card */
 }
 
 .card-habilidades h3 {
     font-size: 1.5rem;
-    /* Tamanho padrão */
     color: var(--primary-color);
     margin: 0;
-    /* Remover margens para evitar que o título saia do card */
     overflow: hidden;
-    /* Garante que o texto não saia do card */
     white-space: normal;
-    /* Permite que o texto quebre em várias linhas */
     line-height: 1.2;
-    /* Ajusta a altura da linha */
 }
 
 .card-habilidades p {
@@ -181,18 +172,14 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     margin: 0;
-    /* Remover margens para evitar que o texto saia do card */
     padding-top: 5px;
 }
-
-
 
 .card-habilidades:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Certificados */
 .certificados {
     padding: 2rem;
     background-color: var(--background-color);
@@ -215,26 +202,19 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Alinha os itens dentro do card */
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
-    /* Garante que nada saia do card */
 }
 
 .card-certificados h3 {
     font-size: 1.5rem;
-    /* Tamanho padrão */
     color: var(--primary-color);
     margin: 0;
-    /* Remover margens para evitar que o título saia do card */
     overflow: hidden;
-    /* Garante que o texto não saia do card */
     white-space: normal;
-    /* Permite que o texto quebre em várias linhas */
     line-height: 1.2;
-    /* Ajusta a altura da linha */
 }
 
 .card-certificados p {
@@ -242,9 +222,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     margin: 0;
-    /* Remover margens para evitar que o texto saia do card */
     padding: 10px;
-    /* Adiciona um pouco de espaço antes do botão */
 }
 
 .card-certificados .btn-container {
@@ -252,21 +230,15 @@ body {
     justify-content: center;
     gap: 10px;
     padding: 10px;
-    /* Adiciona um pouco de espaço acima dos botões */
 }
 
 .card-certificados .btn {
     padding: 10px 15px;
-    /* Ajusta o padding para que o botão não fique muito grande */
     font-size: 1rem;
-    /* Tamanho padrão do texto do botão */
     border-radius: 5px;
-    /* Bordas arredondadas */
     transition: background-color 0.3s ease, transform 0.3s ease;
     width: 100%;
-    /* Faz o botão ocupar toda a largura disponível */
     max-width: 150px;
-    /* Limita a largura máxima do botão */
 }
 
 .card-certificados .btn-primary {
@@ -289,7 +261,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Contatos */
 .contatos {
     padding: 2rem;
     background-color: var(--background-color);
@@ -388,7 +359,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Footer */
 footer {
     background-color: var(--primary-color);
     padding: 20px;
@@ -401,7 +371,6 @@ footer p {
     margin: 0;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
     .descricao-pessoal h2 {
         font-size: 1.5rem;
