@@ -14,53 +14,43 @@
 </head>
 
 <body>
-    <header class="hero-header">
-        <div class="container">
-            <div class="header-content">
-                <!-- Logo à esquerda -->
-                <div class="logo">
-                    <img src="/assets/Images/logo.jpeg" alt="Logo" class="img-fluid" width="150">
-                </div>
-                <!-- Botões e Ícones à direita -->
-                <div class="header-buttons">
-                    <a href="#projetos" class="btn">Projetos</a>
-                    <a href="#sobre" class="btn">Sobre</a>
-                    <a href="#contato" class="btn">Contato</a>
-                    <!-- Ícones sociais -->
-                    <div class="social-icons">
-                        <a href="https://github.com/seu-perfil" target="_blank" class="social-icon">
-                            <img src="/assets/icons/github.svg" alt="GitHub">
-                        </a>
-                        <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" class="social-icon">
-                            <img src="/assets/icons/linkedin.svg" alt="LinkedIn">
-                        </a>
-                        <a href="https://www.instagram.com/seu-perfil" target="_blank" class="social-icon">
-                            <img src="/assets/icons/instagram.svg" alt="Instagram">
-                        </a>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="/assets/Images/logo-nova.jpeg" alt="Logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="#habilidades">Habilidades</a>
+                        <a class="nav-link" href="#certificados">Certificados</a>
+                        <a class="nav-link" href="#area-contatos">Contatos</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
 
+    <section class="sobre-mim">
+        <div class="foto-container">
+            <img src="/assets/Images/perfil.jpg" alt="Minha Foto" class="foto">
+        </div>
+        <div class="descricao-pessoal">
+            <h2>Lucas Silva Barboza</h2>
+            <div class="barra-azul-2"></div>
+            <p>Eu gosto de tecnologia e do impacto que o desenvolvimento de software pode ter. Programar é uma forma
+                de explorar novas possibilidades e criar soluções inovadoras. Estou sempre em busca de novos
+                desafios para aprimorar minhas habilidades e desenvolver soluções criativas.</p>
+        </div>
+    </section>
+
+    <div class="barra-azul"></div>
+
     <main class="container">
-        <section class="sobre-mim">
-            <div class="foto-container">
-                <img src="/assets/Images/perfil.jpg" alt="Minha Foto" class="foto">
-            </div>
-            <div class="descricao-pessoal">
-                <h2>Lucas Silva Barboza</h2>
-                <div class="barra-azul-2"></div>
-                <p>Eu gosto de tecnologia e do impacto que o desenvolvimento de software pode ter. Programar é uma forma
-                    de explorar novas possibilidades e criar soluções inovadoras. Estou sempre em busca de novos
-                    desafios
-                    para aprimorar minhas habilidades e desenvolver soluções criativas.</p>
-            </div>
-        </section>
-
-        <div class="barra-azul"></div>
-
-        <section class="habilidades">
+        <section class="habilidades" id="habilidades">
             <h1 class="mb-4">Minhas Habilidades</h1>
             <div class="container">
                 <div class="cards-container row">
@@ -98,7 +88,9 @@
                 </div>
             </div>
         </section>
+
         <div class="barra-azul"></div>
+        
         <section class="certificados" id="certificados">
             <h1 class="mb-4">Certificados</h1>
             <div class="certificados-container row">
@@ -128,24 +120,46 @@
                 </div>
             </div>
         </section>
+
         <div class="barra-azul"></div>
+        
         <section>
             <div class="contatos" id="area-contatos">
                 <div class="container">
                     <div class="contato-container row">
+                        <div class="informacoes col-12 col-md-6 mb-4">
+                            <h2>Conecte-se Comigo</h2>
+                            <p>Estou sempre disponível para novas conexões, trocas de ideias e colaborações. Sinta-se à vontade
+                                para me seguir nas redes sociais e ficar por dentro das novidades!</p>
+                            <div class="social-icons">
+                                <a href="https://github.com/seu-perfil" target="_blank" class="social-icon">
+                                    <img src="/assets/icons/github.svg" alt="GitHub">
+                                </a>
+                                <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" class="social-icon">
+                                    <img src="/assets/icons/linkedin.svg" alt="LinkedIn">
+                                </a>
+                                <a href="https://www.instagram.com/seu-perfil" target="_blank" class="social-icon">
+                                    <img src="/assets/icons/instagram.svg" alt="Instagram">
+                                </a>
+                            </div>
+                            <button class="btn-contato mt-4">Entre em Contato</button>
+                        </div>
+        
                         <div class="formulario col-12 col-md-6">
                             <h2>Fale Comigo</h2>
-                            <div id="mensagem-feedback" class="alert" style="margin-top: 20px;"></div>
+                            <div id="mensagem-feedback" class="alert"></div>
                             <form id="formContato" action="/formContato" method="POST">
                                 <label for="nome">Nome</label>
-                                <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome"
-                                    required>
+                                <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome" required>
+        
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email" class="form-control" placeholder="Seu email"
                                     required>
+        
                                 <label for="mensagem">Mensagem</label>
-                                <textarea id="mensagem" name="mensagem" class="form-control" rows="4"
-                                    placeholder="Sua mensagem" required></textarea>
+                                <textarea id="mensagem" name="mensagem" class="form-control" rows="4" placeholder="Sua mensagem"
+                                    required></textarea>
+        
                                 <button type="submit" class="botao mt-3">Enviar</button>
                             </form>
                         </div>
@@ -153,6 +167,8 @@
                 </div>
             </div>
         </section>
+
+
     </main>
 
     <footer class="footer">
@@ -242,6 +258,17 @@
                     });
             });
         });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+
     </script>
 </body>
 

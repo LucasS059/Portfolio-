@@ -38,122 +38,29 @@ body {
     margin: 10px auto;
 }
 
-/* Geral */
-.hero-header {
-    background-color: #f5f5f5;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+.navbar {
+    background-color: #007bff;
+    padding: 1rem;
 }
 
-/* Container do conteúdo */
-.header-content {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Logo */
-.logo img {
-    max-height: 50px;
-    object-fit: contain;
-}
-
-/* Botões */
-.header-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.header-buttons .btn {
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.header-buttons .btn:hover {
-    background-color: #0056b3;
-}
-
-/* Estilo dos ícones sociais */
-.social-icons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.navbar-brand img {
+    height: 40px;
+    width: auto;
     margin-left: 20px;
-    /* Espaçamento dos ícones em relação aos botões */
 }
 
-.social-icon img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+.nav-link {
+    color: var(--white) !important;
 }
 
-.social-icon img:hover {
-    transform: scale(1.1);
-    /* Leve aumento ao passar o mouse */
-    opacity: 0.8;
-}
-.botao {
-    background-color: #fff;
-    /* Cor do botão */
-    color: #4a90e2;
-    /* Cor do texto do botão */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
+.nav-link:hover {
+    color: var(--text-color) !important;
 }
 
-.botao:hover {
-    background-color: #4a90e2;
-    /* Cor do botão ao passar o mouse */
-    color: white;
-    /* Cor do texto ao passar o mouse */
-    transform: scale(1.05);
-    /* Efeito de aumento ao passar o mouse */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    /* Centraliza os ícones */
-    margin-top: 20px;
-    /* Espaçamento acima dos ícones */
-}
-
-.social-icon {
-    margin: 0 10px;
-    /* Espaçamento entre os ícones */
-}
-
-.social-icon img {
-    width: 30px;
-    /* Tamanho dos ícones */
-    height: 30px;
-    /* Tamanho dos ícones */
-    transition: transform 0.3s;
-    /* Efeito de transição ao passar o mouse */
-}
-
-.social-icon img:hover {
-    transform: scale(1.1);
-    /* Aumenta o ícone ao passar o mouse */
-}
-
-/*---------------- CSS Específico para Sobre Mim ----------------*/
 .sobre-mim {
     background-image: url('/assets/Images/teclado.jpg');
     background-size: cover;
@@ -164,6 +71,7 @@ body {
     align-items: center;
     position: relative;
     text-align: center;
+    height: 93vh;
 }
 
 .sobre-mim::before {
@@ -179,7 +87,8 @@ body {
 
 .foto {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-width: 200px;
     object-fit: cover;
     border-radius: 50%;
     border: 5px solid var(--primary-color);
@@ -191,8 +100,8 @@ body {
     justify-content: center;
     align-items: center;
     margin: 20px 0;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    max-width: 200px;
     position: relative;
     z-index: 2;
 }
@@ -210,7 +119,7 @@ body {
 }
 
 .descricao-pessoal h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 .descricao-pessoal p {
@@ -219,7 +128,7 @@ body {
     max-width: 700px;
 }
 
-/*---------------- CSS Específico para Habilidades ----------------*/
+/* Habilidades */
 .habilidades {
     padding: 2rem;
     background-color: var(--background-color);
@@ -230,7 +139,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    /* Alinha os itens ao topo */
     gap: 30px;
     flex-wrap: wrap;
 }
@@ -240,35 +148,51 @@ body {
     border-radius: 8px;
     text-align: center;
     width: 100%;
-    height: 280px;
+    max-width: 300px;
+    /* Limite de largura */
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    /* Alinha os itens dentro do card */
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    /* Garante que nada saia do card */
 }
+
+.card-habilidades h3 {
+    font-size: 1.5rem;
+    /* Tamanho padrão */
+    color: var(--primary-color);
+    margin: 0;
+    /* Remover margens para evitar que o título saia do card */
+    overflow: hidden;
+    /* Garante que o texto não saia do card */
+    white-space: normal;
+    /* Permite que o texto quebre em várias linhas */
+    line-height: 1.2;
+    /* Ajusta a altura da linha */
+}
+
+.card-habilidades p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    /* Remover margens para evitar que o texto saia do card */
+    padding-top: 5px;
+}
+
+
 
 .card-habilidades:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-.card-habilidades h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.card-habilidades p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-color);
-    margin: 0;
-    padding-top: 5px;
-}
-
-/*---------------- CSS Específico para Certificados ----------------*/
+/* Certificados */
 .certificados {
     padding: 2rem;
     background-color: var(--background-color);
@@ -279,6 +203,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .card-certificados {
@@ -290,80 +215,98 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* Alinha os itens dentro do card */
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-certificados:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    /* Garante que nada saia do card */
 }
 
 .card-certificados h3 {
     font-size: 1.5rem;
+    /* Tamanho padrão */
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin: 0;
+    /* Remover margens para evitar que o título saia do card */
+    overflow: hidden;
+    /* Garante que o texto não saia do card */
+    white-space: normal;
+    /* Permite que o texto quebre em várias linhas */
+    line-height: 1.2;
+    /* Ajusta a altura da linha */
 }
 
 .card-certificados p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: var(--text-color);
-    margin-bottom: 20px;
+    margin: 0;
+    /* Remover margens para evitar que o texto saia do card */
+    padding: 10px;
+    /* Adiciona um pouco de espaço antes do botão */
 }
 
 .card-certificados .btn-container {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 15px;
+    padding: 10px;
+    /* Adiciona um pouco de espaço acima dos botões */
 }
 
 .card-certificados .btn {
-    padding: 10px 20px;
-    /* Tamanho do botão */
-    border: none;
+    padding: 10px 15px;
+    /* Ajusta o padding para que o botão não fique muito grande */
+    font-size: 1rem;
+    /* Tamanho padrão do texto do botão */
     border-radius: 5px;
     /* Bordas arredondadas */
-    font-size: 1rem;
-    color: #fff;
-    /* Cor do texto */
-    text-decoration: none;
-    /* Remove o sublinhado */
     transition: background-color 0.3s ease, transform 0.3s ease;
-    /* Transições suaves */
+    width: 100%;
+    /* Faz o botão ocupar toda a largura disponível */
+    max-width: 150px;
+    /* Limita a largura máxima do botão */
 }
 
 .card-certificados .btn-primary {
-    background-color: var(--primary -color);
-    /* Cor de fundo do botão primário */
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 .card-certificados .btn-secondary {
     background-color: #6c757d;
-    /* Cor de fundo do botão secundário */
+    color: var(--white);
 }
 
 .card-certificados .btn-primary:hover {
     background-color: #0056b3;
-    /* Cor de fundo ao passar o mouse */
     transform: scale(1.05);
-    /* Efeito de aumento ao passar o mouse */
 }
 
 .card-certificados .btn-secondary:hover {
     background-color: #5a6268;
-    /* Cor de fundo ao passar o mouse */
     transform: scale(1.05);
-    /* Efeito de aumento ao passar o mouse */
 }
 
-/*---------------- CSS Específico para contatos ----------------*/
-
+/* Contatos */
 .contatos {
     padding: 2rem;
     background-color: var(--background-color);
+}
+
+.informacoes h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.informacoes p {
+    font-size: 1rem;
+    color: var(--light-text-color);
+    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
 .formulario {
@@ -375,13 +318,13 @@ body {
 }
 
 .formulario h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     color: var(--text-color);
 }
 
 .formulario label {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 10px;
     color: var(--text-color);
 }
@@ -393,24 +336,59 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     margin-bottom: 20px;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
-.formulario input[type="submit"] {
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icon img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+.btn-contato {
     background-color: var(--primary-color);
     color: var(--white);
+    padding: 12px 24px;
+    font-size: 1rem;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.formulario input[type="submit"]:hover {
+.btn-contato:hover {
     background-color: #0056b3;
     transform: scale(1.05);
 }
 
-/*---------------- CSS Específico para footer ----------------*/
+.botao {
+    background-color: #4a90e2;
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botao:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Footer */
 footer {
     background-color: var(--primary-color);
     padding: 20px;
@@ -422,3 +400,50 @@ footer {
 footer p {
     margin: 0;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .descricao-pessoal h2 {
+        font-size: 1.5rem;
+    }
+
+    .descricao-pessoal p {
+        font-size: 1rem;
+    }
+
+    .informacoes h2 {
+        font-size: 1.5rem;
+    }
+
+    .formulario h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-habilidades,
+    .card-certificados {
+        max-width: 100%;
+    }
+
+    .card-habilidades h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-habilidades p {
+        font-size: 0.9rem;
+    }
+    .card-certificados h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-certificados p {
+        font-size: 0.9rem;
+    }
+
+    .card-certificados .btn {
+        font-size: 0.9rem;
+
+        padding: 10px 10px;
+
+    }
+}
+
