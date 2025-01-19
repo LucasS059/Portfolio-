@@ -8,7 +8,7 @@
     --black: #000;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
     * {
         padding: 0;
         margin: 0;
