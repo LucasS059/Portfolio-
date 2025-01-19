@@ -76,7 +76,7 @@ body {
 /* Estilos da Seção Sobre Mim */
 /* ========================= */
 .sobre-mim {
-    background-image: url('./src/assets/Images/teclado-branco.jpg');    
+    background-image: url('./src/assets/Images/logo-nova.jpeg');    
     background-size: cover;
     background-position: center;
     display: flex;
