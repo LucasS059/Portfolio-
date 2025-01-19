@@ -39,7 +39,7 @@ body {
 /* ========================= */
 .barra-azul {
     width: 100%;
-    height: 15px;
+    height: 4px;
     background-color: var(--primary-color);
 }
 
@@ -165,19 +165,20 @@ body {
     background-color: var(--white);
     border-radius: var(--border-radius);
     text-align: center;
+    /* Centraliza o texto dentro do card */
     width: 100%;
     max-width: 800px;
+    /* Ou o que você preferir */
     min-height: 250px;
-    /* Defina uma altura mínima para os cards */
     display: flex;
     flex-direction: column;
-    /* Certifique-se de que o card é uma coluna */
     justify-content: center;
     /* Isso ajuda a distribuir o espaço */
     padding: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 10px;
+    margin: 10px auto;
+    /* Centraliza o card na página */
 }
 
 .card-habilidades h3,
@@ -269,28 +270,22 @@ body {
     align-items: center;
     padding-top: 10px;
     gap: 10px;
-    /* Espaçamento entre os botões */
     max-width: 100%;
-    /* Garante que a largura máxima seja 100% */
-    margin-top: auto;
-    /* Empurra a btn-container para o fundo do card */
+    margin-top: 10px;
 }
 
 .btn-container .btn {
     flex: 1;
-    /* Permite que os botões ocupem o espaço disponível */
     max-width: 100px;
-    /* Ajuste o tamanho máximo dos botões */
     padding: 5px 10px;
-    /* Reduzido para um tamanho mais confortável */
     font-size: 0.9rem;
-    /* Ajuste o tamanho da fonte para telas pequenas */
     text-align: center;
 }
 
 /* ========================= */
 /* Estilos do Rodapé */
 /* ========================= */
+
 footer {
     background-color: var(--primary-color);
     padding: 20px;
@@ -309,23 +304,29 @@ footer p {
 
 @media (max-width: 2560px) {
     .descricao-pessoal h2 {
-        font-size: 10rem;
+        font-size: 5rem;
     }
 
     .descricao-pessoal p {
-        font-size: 1.0rem;
+        font-size: 1.5rem;
         line-height: 1.5;
-        max-width: 70%;
+        max-width: 50%;
     }
 
     .card-habilidades h3,
     .card-certificados h3 {
+        font-size: 1.9rem;
+    }
+
+    .card-habilidades p {
         font-size: 1.4rem;
     }
 
-    .card-habilidades p,
     .card-certificados p {
-        font-size: 0.9rem;
+        font-size: 1.4rem;
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
     }
 
     .foto {
@@ -336,15 +337,38 @@ footer p {
         max-width: 290px;
     }
 
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+        gap: 10px;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .btn-container .btn {
+        max-width: 250px;
+        padding: 5px;
+        font-size: 1.2rem;
+    }
+
+    .contatos h2 {
+        font-size: 4rem;
+    }
+
+    .contatos p {
+        font-size: 1.8rem;
+    }
+
+    footer p {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 1920px) {
     .barra-azul-2 {
         width: 50%;
-    }
-
-    .sobre-mim {
-        height: 90.3vh;
     }
 
     .descricao-pessoal h2 {
@@ -353,6 +377,8 @@ footer p {
 
     .descricao-pessoal p {
         font-size: 1.2rem;
+        padding-right: 50px;
+        padding-left: 50px;
     }
 
     .card-habilidades,
@@ -362,36 +388,35 @@ footer p {
         text-align: center;
         width: 100%;
         max-width: 100%;
-        /* Ajuste para ocupar 100% da largura disponível */
         min-height: 300px;
-        /* Defina uma altura mínima para os cards */
         display: flex;
         flex-direction: column;
-        /* Certifique-se de que o card é uma coluna */
         justify-content: center;
-        /* Isso ajuda a distribuir o espaço */
         padding: 15px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        margin: 0 auto;
     }
 
     .card-habilidades h3,
     .card-certificados h3 {
         font-size: 1.5rem;
-        /* Ajuste o tamanho da fonte se necessário */
         color: var(--primary-color);
         margin: 5px 0;
     }
 
-    .card-habilidades p,
-    .card-certificados p {
+    .card-habilidades p {
         font-size: 1rem;
-        /* Ajuste o tamanho da fonte se necessário */
         line-height: 1.4;
         color: var(--text-color);
         margin: 0;
         padding-top: 5px;
+    }
+
+    .card-certificados p {
+        font-size: 1.4rem;
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
     }
 
     .btn-container {
@@ -400,20 +425,14 @@ footer p {
         align-items: center;
         padding-top: 10px;
         gap: 10px;
-        /* Espaçamento entre os botões */
         max-width: 100%;
-        /* Garante que a largura máxima seja 100% */
         margin-top: 10px;
-        /* Empurra a btn-container para o fundo do card */
     }
 
     .btn-container .btn {
         max-width: 120px;
-        /* Reduz o tamanho máximo dos botões */
         padding: 5px;
-        /* Ajuste o padding se necessário */
         font-size: 0.8rem;
-        /* Ajuste o tamanho da fonte se necessário */
     }
 
     .foto {
@@ -422,6 +441,18 @@ footer p {
 
     .foto-container {
         max-width: 190px;
+    }
+
+    .contatos h2 {
+        font-size: 2rem;
+    }
+
+    .contatos p {
+        font-size: 1.0rem;
+    }
+
+    footer p {
+        font-size: 1.0rem;
     }
 }
 
@@ -449,24 +480,18 @@ footer p {
         text-align: center;
         width: 100%;
         max-width: 100%;
-        /* Ajuste para ocupar 100% da largura disponível */
         min-height: 300px;
-        /* Defina uma altura mínima para os cards */
         display: flex;
         flex-direction: column;
-        /* Certifique-se de que o card é uma coluna */
         justify-content: center;
-        /* Isso ajuda a distribuir o espaço */
         padding: 15px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        margin: 0 auto;
     }
 
     .card-habilidades h3,
     .card-certificados h3 {
         font-size: 1.5rem;
-        /* Ajuste o tamanho da fonte se necessário */
         color: var(--primary-color);
         margin: 5px 0;
     }
@@ -474,10 +499,8 @@ footer p {
     .card-habilidades p,
     .card-certificados p {
         font-size: 1rem;
-        /* Ajuste o tamanho da fonte se necessário */
         line-height: 1.4;
         color: var(--text-color);
-        margin: 0;
         padding-top: 5px;
     }
 
@@ -487,20 +510,14 @@ footer p {
         align-items: center;
         padding-top: 10px;
         gap: 10px;
-        /* Espaçamento entre os botões */
         max-width: 100%;
-        /* Garante que a largura máxima seja 100% */
         margin-top: 10px;
-        /* Empurra a btn-container para o fundo do card */
     }
 
     .btn-container .btn {
         max-width: 120px;
-        /* Reduz o tamanho máximo dos botões */
         padding: 5px;
-        /* Ajuste o padding se necessário */
         font-size: 0.8rem;
-        /* Ajuste o tamanho da fonte se necessário */
     }
 
     .foto {
@@ -509,6 +526,18 @@ footer p {
 
     .foto-container {
         max-width: 190px;
+    }
+
+    .contatos h2 {
+        font-size: 2rem;
+    }
+
+    .contatos p {
+        font-size: 1.0rem;
+    }
+
+    footer p {
+        font-size: 1.0rem;
     }
 }
 
@@ -536,36 +565,33 @@ footer p {
         text-align: center;
         width: 100%;
         max-width: 100%;
-        /* Ajuste para ocupar 100% da largura disponível */
         min-height: 300px;
-        /* Defina uma altura mínima para os cards */
         display: flex;
         flex-direction: column;
-        /* Certifique-se de que o card é uma coluna */
         justify-content: center;
-        /* Isso ajuda a distribuir o espaço */
         padding: 15px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        margin: 0 auto;
     }
 
     .card-habilidades h3,
     .card-certificados h3 {
-        font-size: 1.5rem;
-        /* Ajuste o tamanho da fonte se necessário */
+        font-size: 1.4rem;
         color: var(--primary-color);
         margin: 5px 0;
     }
 
-    .card-habilidades p,
-    .card-certificados p {
+    .card-habilidades p {
         font-size: 1rem;
-        /* Ajuste o tamanho da fonte se necessário */
         line-height: 1.4;
         color: var(--text-color);
-        margin: 0;
         padding-top: 5px;
+    }
+
+    .card-certificados p {
+        font-size: 1.0rem;
+        max-width: 80%;
+        text-align: center;
     }
 
     .btn-container {
@@ -574,20 +600,14 @@ footer p {
         align-items: center;
         padding-top: 10px;
         gap: 10px;
-        /* Espaçamento entre os botões */
         max-width: 100%;
-        /* Garante que a largura máxima seja 100% */
         margin-top: 10px;
-        /* Empurra a btn-container para o fundo do card */
     }
 
     .btn-container .btn {
         max-width: 120px;
-        /* Reduz o tamanho máximo dos botões */
         padding: 5px;
-        /* Ajuste o padding se necessário */
         font-size: 0.8rem;
-        /* Ajuste o tamanho da fonte se necessário */
     }
 
     .foto {
@@ -625,31 +645,21 @@ footer p {
 
     .card-certificados {
         min-height: 200px;
-        /* Ajuste a altura mínima para telas muito pequenas */
     }
 
     .btn-container {
         display: flex;
-        /* Certifique-se de que o display é flex */
         justify-content: center;
-        /* Centraliza os botões */
         align-items: center;
-        /* Alinha os botões verticalmente */
         padding-top: 10px;
         gap: 10px;
-        /* Espaçamento entre os botões */
         max-width: 100%;
-        /* Garante que a largura máxima seja 100% */
         margin-top: 10px;
-        /* Empurra a btn-container para o fundo do card */
     }
 
     .btn-container .btn {
         max-width: 100%;
-        /* Permite que os botões ocupem 100% da largura disponível */
         padding: 5px;
-        /* Ajuste o padding se necessário */
         font-size: 0.7rem;
-        /* Ajuste o tamanho da fonte se necessário */
     }
 }
