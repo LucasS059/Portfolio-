@@ -52,6 +52,9 @@ body {
 .navbar {
     background-color: var(--primary-color);
     padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar-brand img {
@@ -76,8 +79,9 @@ body {
 /* Estilos da Seção Sobre Mim */
 /* ========================= */
 .sobre-mim {
-background-image: url('/Portfolio-/src/assets/Images/teclado-branco.jpg');
+    background-image: url('/src/assets/Images/teclado-branco.jpeg');
     background-size: cover;
+    height: 92.5vh;
     background-position: center;
     display: flex;
     flex-direction: column;
@@ -147,7 +151,7 @@ background-image: url('/Portfolio-/src/assets/Images/teclado-branco.jpg');
 .habilidades,
 .certificados {
     padding: 2rem;
-    background-color: var(--background-color);
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
     text-align: center;
 }
 
@@ -165,20 +169,16 @@ background-image: url('/Portfolio-/src/assets/Images/teclado-branco.jpg');
     background-color: var(--white);
     border-radius: var(--border-radius);
     text-align: center;
-    /* Centraliza o texto dentro do card */
     width: 100%;
     max-width: 800px;
-    /* Ou o que você preferir */
     min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Isso ajuda a distribuir o espaço */
     padding: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 10px auto;
-    /* Centraliza o card na página */
 }
 
 .card-habilidades h3,
@@ -207,22 +207,114 @@ background-image: url('/Portfolio-/src/assets/Images/teclado-branco.jpg');
 /* Estilos de Contato e Formulário */
 /* ========================= */
 .contatos {
-    padding: 2rem;
-    background-color: var(--background-color);
+    background-color: #f8f9fa;
+    padding: 40px 0;
 }
 
-.informacoes h2 {
-    font-size: var(--font-size-large);
-    color: var(--text-color);
+.contato-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.informacoes {
+    text-align: center;
+}
+
+.social-icons {
+    justify-content: center;
+}
+
+.email-contatos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.email-contatos li {
+    margin: 10px 0;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
     margin-bottom: 15px;
-    font-weight: bold;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
 }
 
-.informacoes p {
-    font-size: var(--font-size-small);
-    color: var(--light-text-color);
-    margin-bottom: 30px;
-    line-height: 1.6;
+.contact-form button {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.email-contatos img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #1e40af;
+}
+
+/* Animações */
+.informacoes,
+.formulario {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ========================= */
@@ -318,15 +410,9 @@ footer p {
         font-size: 1.9rem;
     }
 
-    .card-habilidades p {
-        font-size: 1.4rem;
-    }
-
+    .card-habilidades p,
     .card-certificados p {
         font-size: 1.4rem;
-        max-width: 80%;
-        margin: 0 auto;
-        text-align: center;
     }
 
     .foto {
@@ -335,22 +421,6 @@ footer p {
 
     .foto-container {
         max-width: 290px;
-    }
-
-    .btn-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10px;
-        gap: 10px;
-        max-width: 100%;
-        margin-top: 10px;
-    }
-
-    .btn-container .btn {
-        max-width: 250px;
-        padding: 5px;
-        font-size: 1.2rem;
     }
 
     .contatos h2 {
@@ -367,10 +437,6 @@ footer p {
 }
 
 @media (max-width: 1920px) {
-    .barra-azul-2 {
-        width: 50%;
-    }
-
     .descricao-pessoal h2 {
         font-size: 3rem;
     }
@@ -383,50 +449,7 @@ footer p {
 
     .card-habilidades,
     .card-certificados {
-        background-color: var(--white);
-        border-radius: var(--border-radius);
-        text-align: center;
-        width: 100%;
-        max-width: 100%;
         min-height: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card-habilidades h3,
-    .card-certificados h3 {
-        font-size: 1.5rem;
-        color: var(--primary-color);
-        margin: 5px 0;
-    }
-
-    .card-habilidades p {
-        font-size: 1rem;
-        line-height: 1.4;
-        color: var(--text-color);
-        margin: 0;
-        padding-top: 5px;
-    }
-
-    .card-certificados p {
-        font-size: 1.4rem;
-        max-width: 80%;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .btn-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10px;
-        gap: 10px;
-        max-width: 100%;
-        margin-top: 10px;
     }
 
     .btn-container .btn {
@@ -457,14 +480,6 @@ footer p {
 }
 
 @media (max-width: 1440px) {
-    .barra-azul-2 {
-        width: 50%;
-    }
-
-    .sobre-mim {
-        height: 90.3vh;
-    }
-
     .descricao-pessoal h2 {
         font-size: 3rem;
     }
@@ -475,57 +490,17 @@ footer p {
 
     .card-habilidades,
     .card-certificados {
-        background-color: var(--white);
-        border-radius: var(--border-radius);
-        text-align: center;
-        width: 100%;
-        max-width: 100%;
         min-height: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card-habilidades h3,
     .card-certificados h3 {
         font-size: 1.5rem;
-        color: var(--primary-color);
-        margin: 5px 0;
     }
 
     .card-habilidades p,
     .card-certificados p {
         font-size: 1rem;
-        line-height: 1.4;
-        color: var(--text-color);
-        padding-top: 5px;
-    }
-
-    .btn-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10px;
-        gap: 10px;
-        max-width: 100%;
-        margin-top: 10px;
-    }
-
-    .btn-container .btn {
-        max-width: 120px;
-        padding: 5px;
-        font-size: 0.8rem;
-    }
-
-    .foto {
-        max-width: 200px;
-    }
-
-    .foto-container {
-        max-width: 190px;
     }
 
     .contatos h2 {
@@ -542,80 +517,37 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    .barra-azul-2 {
-        width: 50%;
-    }
-
-    .sobre-mim {
-        height: 90.3vh;
-    }
-
     .descricao-pessoal h2 {
         font-size: 3rem;
     }
 
     .descricao-pessoal p {
-        font-size: 1.2rem;
+        font-size: 2.2rem;
+        line-height: 1.6;
+        max-width: 80%;
     }
 
     .card-habilidades,
     .card-certificados {
-        background-color: var(--white);
-        border-radius: var(--border-radius);
-        text-align: center;
-        width: 100%;
-        max-width: 100%;
         min-height: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card-habilidades h3,
     .card-certificados h3 {
         font-size: 1.4rem;
-        color: var(--primary-color);
-        margin: 5px 0;
     }
 
-    .card-habilidades p {
-        font-size: 1rem;
-        line-height: 1.4;
-        color: var(--text-color);
-        padding-top: 5px;
-    }
-
+    .card-habilidades p,
     .card-certificados p {
+        font-size: 1rem;
+    }
+
+    .contatos h2 {
+        font-size: 2rem;
+    }
+
+    .contatos p {
         font-size: 1.0rem;
-        max-width: 80%;
-        text-align: center;
-    }
-
-    .btn-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10px;
-        gap: 10px;
-        max-width: 100%;
-        margin-top: 10px;
-    }
-
-    .btn-container .btn {
-        max-width: 120px;
-        padding: 5px;
-        font-size: 0.8rem;
-    }
-
-    .foto {
-        max-width: 200px;
-    }
-
-    .foto-container {
-        max-width: 190px;
     }
 }
 
@@ -624,37 +556,20 @@ footer p {
         width: 60%;
     }
 
-    .sobre-mim {
-        height: 91vh;
-    }
-
     .foto {
         max-width: 290px;
     }
 
     .descricao-pessoal h2 {
         font-size: 1.9rem;
-        max-width: 100%;
     }
 
     .descricao-pessoal p {
         font-size: 1.0rem;
-        line-height: 1.5;
-        max-width: 100%;
     }
 
     .card-certificados {
         min-height: 200px;
-    }
-
-    .btn-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10px;
-        gap: 10px;
-        max-width: 100%;
-        margin-top: 10px;
     }
 
     .btn-container .btn {
