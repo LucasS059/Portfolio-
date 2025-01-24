@@ -79,7 +79,7 @@ body {
 /* Estilos da Seção Sobre Mim */
 /* ========================= */
 .sobre-mim {
-    background-image: url('/src/assets/Images/teclado-branco.jpeg');
+    background-image: url('/Portfolio-/src/assets/Images/teclado-branco.jpeg');
     background-size: cover;
     height: 92.5vh;
     background-position: center;
