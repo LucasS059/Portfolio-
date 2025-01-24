@@ -143,6 +143,7 @@ body {
     font-size: 2.2rem;
     line-height: 1.6;
     max-width: 80%;
+    padding-top: 15px;
 }
 
 /* ========================= */
@@ -285,6 +286,18 @@ body {
     border-radius: 5px;
 }
 
+.contact-form input,
+.contact-form textarea {
+    font-size: 1.2rem;
+    /* Aumente conforme necessário */
+    padding: 12px;
+}
+
+.contact-form button {
+    font-size: 1.2rem;
+    /* Tamanho maior para o botão */
+}
+
 .contact-form button {
     background-color: #2563eb;
     color: #fff;
@@ -299,7 +312,6 @@ body {
     background-color: #1e40af;
 }
 
-/* Animações */
 .informacoes,
 .formulario {
     animation: fadeIn 1s ease-in-out;
@@ -368,7 +380,7 @@ body {
 
 .btn-container .btn {
     flex: 1;
-    max-width: 100px;
+    max-width: 150px;
     padding: 5px 10px;
     font-size: 0.9rem;
     text-align: center;
@@ -430,6 +442,10 @@ footer p {
     .contatos p {
         font-size: 1.8rem;
     }
+    
+    .email-contatos ul{
+        font-size: 1.6rem;
+    }
 
     footer p {
         font-size: 1.5rem;
@@ -443,8 +459,6 @@ footer p {
 
     .descricao-pessoal p {
         font-size: 1.2rem;
-        padding-right: 50px;
-        padding-left: 50px;
     }
 
     .card-habilidades,
@@ -467,11 +481,11 @@ footer p {
     }
 
     .contatos h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .contatos p {
-        font-size: 1.0rem;
+        font-size: 1.2rem;
     }
 
     footer p {
@@ -504,15 +518,19 @@ footer p {
     }
 
     .contatos h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .contatos p {
-        font-size: 1.0rem;
+        font-size: 1.3rem;
     }
 
     footer p {
         font-size: 1.0rem;
+    }
+
+    .email-contatos ul{
+        font-size: 1.4rem;
     }
 }
 
@@ -547,7 +565,11 @@ footer p {
     }
 
     .contatos p {
-        font-size: 1.0rem;
+        font-size: 1.0;
+    }
+
+    .email-contatos ul{
+        font-size: 1.2rem;
     }
 }
 
@@ -576,5 +598,9 @@ footer p {
         max-width: 100%;
         padding: 5px;
         font-size: 0.7rem;
+    }
+    
+    .email-contatos ul{
+        font-size: 1.0rem;
     }
 }
