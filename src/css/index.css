@@ -51,7 +51,6 @@ body {
 
 .navbar {
     background-color: var(--primary-color);
-    padding: 1.5rem;
     position: sticky;
     top: 0;
     z-index: 1000;

@@ -16,15 +16,11 @@
 /* ========================= */
 /* Estilos Globais */
 /* ========================= */
-* {
-    padding: 0;
+html,
+body {
+    height: 100%;
+    /* Garante que o body ocupe toda a altura da tela */
     margin: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    font-size: var(--font-size-base);
 }
 
 body {
@@ -34,9 +30,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* ========================= */
-/* Estilos da Navbar e Barras */
-/* ========================= */
+main {
+    flex: 1;
+    /* Faz o main ocupar o espaço restante entre o header e o footer */
+}
+
+
 .barra-azul {
     width: 100%;
     height: 4px;
@@ -51,7 +50,9 @@ body {
 
 .navbar {
     background-color: var(--primary-color);
-    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar-brand img {
@@ -72,3 +73,88 @@ body {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
+#mainCarousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+    display: flex;
+}
+
+.carousel-inner img {
+    height: 600px;
+    object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    color: var(--white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    /* Garante que o botão fique acima de outros elementos */
+}
+
+.carousel-control-prev {
+    left: 10px;
+    /* Ajuste para ficar visível */
+}
+
+.carousel-control-next {
+    right: 10px;
+    /* Ajuste para ficar visível */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--white);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    
+}
+
+
+#project-details {
+    display: none;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+#project-details .close-btn {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    color: var(--white);
+    font-size: var(--font-size-small);
+}
+
+footer p {
+    margin: 0;
+}
