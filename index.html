@@ -25,7 +25,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="/src/html/add_projetos.html">Adicionar Projetos</a> 
+                        <a class="nav-link" href="/src/html/add_projetos.html" id="add-projects-link">Adicionar Projetos</a>
                         <a class="nav-link" href="#habilidades">Habilidades</a>
                         <a class="nav-link" href="#certificados">Certificados</a>
                         <a class="nav-link" href="#area-contatos">Conecte-se Comigo</a>
@@ -187,6 +187,19 @@
             alert("Mensagem enviada com sucesso!");
             return true; 
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+                const addProjectsLink = document.getElementById("add-projects-link");
+
+                const isProduction = window.location.hostname !== "localhost";
+
+                if (isProduction) {
+                    addProjectsLink.style.display = "none";
+                } else {
+                    addProjectsLink.style.display = "block";
+                }
+            });
+
     </script>
 </body>
 

@@ -103,10 +103,20 @@
     `).join("");
         }
 
+        function formatDescription(description) {
+            return description.split('\n').map(line => {
+                const urlPattern = /(https?:\/\/[^\s]+)/g;
+                line = line.replace(urlPattern, '<a href="$1" target="_blank">$1</a>');
+                return `<p>${line}</p>`;
+            }).join('');
+        }
+
+
         function showDetails(index) {
             const project = window.projects[index];
             document.getElementById("project-title").textContent = project.title;
-            document.getElementById("project-description").textContent = project.description;
+
+            document.getElementById("project-description").innerHTML = formatDescription(project.description);
 
             const photosContainer = document.getElementById("project-photos");
             photosContainer.innerHTML = project.photos.map((photo, i) => `
@@ -117,6 +127,7 @@
 
             document.getElementById("project-details").style.display = "block";
         }
+
 
         function hideDetails() {
             document.getElementById("project-details").style.display = "none";
