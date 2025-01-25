@@ -537,7 +537,7 @@ footer p {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px  ) {
     .descricao-pessoal h2 {
         font-size: 3rem;
     }
@@ -576,6 +576,20 @@ footer p {
     }
 }
 
+@media (max-width: 756px) {
+    .descricao-pessoal h2 {
+        font-size: 2rem;
+        /* Reduzido de 6rem */
+    }
+
+    .descricao-pessoal p {
+        font-size: 1.2rem;
+        /* Reduzido de 2.2rem */
+        line-height: 1.5;
+        max-width: 90%;
+        /* Garantir que o texto não ultrapasse */
+    }
+}
 @media (max-width: 480px) {
     .barra-azul-2 {
         width: 60%;
