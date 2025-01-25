@@ -11,7 +11,13 @@ const app = express();
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'index.html'));
 });
-app.use(express.static('src'));
+app.use(express.static(__dirname + "/src"));
+
+app.use("/css", express.static(__dirname + "/src/css", {
+    setHeaders: (res) => {
+        res.set("Content-Type", "text/css");
+    },
+}));
 
 
 app.use(express.json({ limit: "50mb" })); 
