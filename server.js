@@ -11,9 +11,9 @@ const app = express();
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'index.html'));
 });
-app.use(express.static(__dirname + "/src"));
+app.use(express.static(__dirname + ""));
 
-app.use("/css", express.static(__dirname + "/src/css", {
+app.use("/css", express.static(__dirname + "/css", {
     setHeaders: (res) => {
         res.set("Content-Type", "text/css");
     },
