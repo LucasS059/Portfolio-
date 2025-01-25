@@ -109,10 +109,7 @@ app.get('*', (req, res) => {
 
 // Configuração do servidor
 const PORT = process.env.PORT || 3002;
-const HOST = process.env.HOST || 'http://localhost';
 
 app.listen(PORT, () => {
-    const baseUrl = `${HOST}:${PORT}`;
     console.log(`Servidor rodando na porta ${PORT}`);
-    console.log(`Acesse o site em: ${baseUrl}`);
 });
