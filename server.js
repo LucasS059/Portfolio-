@@ -11,7 +11,7 @@ const app = express();
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'index.html'));
 });
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('src'));
 
 
 app.use(express.json({ limit: "50mb" })); 
