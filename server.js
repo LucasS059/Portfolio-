@@ -4,7 +4,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const sharp = require('sharp'); 
+
+
 const app = express();
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'index.html'));
+});
+app.use(express.static(__dirname + ""));
 
 app.use(express.static('public'));
 
