@@ -8,8 +8,6 @@ const sharp = require('sharp');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'index.html'));
 });
