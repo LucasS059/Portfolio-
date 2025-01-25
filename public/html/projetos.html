@@ -80,7 +80,7 @@
         async function fetchProjects() {
             try {
                 console.log("Tentando buscar projetos...");
-                const response = await fetch("http://localhost:3001/test/projects");
+                const response = await fetch("http://localhost:3002/test/projects");
                 if (!response.ok) {
                     throw new Error(`Erro na API: ${response.status} ${response.statusText}`);
                 }
@@ -95,13 +95,17 @@
 
 
         function renderCarousel(projects) {
-            const carouselInner = document.querySelector("#mainCarousel .carousel-inner");
-            carouselInner.innerHTML = projects.map((project, index) => `
+                const carouselInner = document.querySelector("#mainCarousel .carousel-inner");
+
+                    console.log(projects[0].photos[0]); // Verifica a base64 da primeira imagem do primeiro projeto
+
+                carouselInner.innerHTML = projects.map((project, index) => `
         <div class="carousel-item ${index === 0 ? 'active' : ''}">
             <img src="${project.photos[0]}" class="d-block w-100 rounded-3" alt="${project.title}" onclick="showDetails(${index})">
         </div>
     `).join("");
-        }
+            }
+
 
         function formatDescription(description) {
             return description.split('\n').map(line => {
@@ -111,22 +115,27 @@
             }).join('');
         }
 
+    function showDetails(index) {
+        const project = window.projects[index];
+        document.getElementById("project-title").textContent = project.title;
 
-        function showDetails(index) {
-            const project = window.projects[index];
-            document.getElementById("project-title").textContent = project.title;
+        document.getElementById("project-description").innerHTML = formatDescription(project.description);
 
-            document.getElementById("project-description").innerHTML = formatDescription(project.description);
+        const photosContainer = document.getElementById("project-photos");
 
-            const photosContainer = document.getElementById("project-photos");
-            photosContainer.innerHTML = project.photos.map((photo, i) => `
+        // Verificar a base64 de cada foto no projeto
+        project.photos.forEach((photo, i) => {
+            console.log(`Imagem ${i}:`, photo); // Verifica a base64 de cada imagem do projeto
+        });
+
+        photosContainer.innerHTML = project.photos.map((photo, i) => `
         <div class="carousel-item ${i === 0 ? 'active' : ''}">
             <img src="${photo}" class="d-block w-100" alt="${project.title}">
         </div>
     `).join("");
 
-            document.getElementById("project-details").style.display = "block";
-        }
+        document.getElementById("project-details").style.display = "block";
+    }
 
 
         function hideDetails() {
