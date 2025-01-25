@@ -48,11 +48,16 @@ main {
 
 .navbar {
     background-color: var(--primary-color);
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    width: 100%;
+    z-index: 1050;
+    padding-top: 10px;
 }
 
+main{
+    padding-top: 80px;
+}
 .navbar-brand img {
     height: 40px;
     width: auto;

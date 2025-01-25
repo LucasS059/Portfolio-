@@ -49,6 +49,7 @@ body {
     background-color: var(--primary-color);
 }
 
+
 .navbar {
     background-color: var(--primary-color);
     padding: 1.5rem;
@@ -71,8 +72,10 @@ body {
     color: var(--text-color) !important;
 }
 
-.navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.5);
+#habilidades,
+#certificados,
+#area-contatos {
+    padding-top: 80px;
 }
 
 /* ========================= */
@@ -81,7 +84,7 @@ body {
 .sobre-mim {
     background-image: url('/assets/Images/teclado-branco.jpeg');
     background-size: cover;
-    height: 92.5vh;
+    height: 99.6vh;
     background-position: center;
     display: flex;
     flex-direction: column;
@@ -443,8 +446,8 @@ footer p {
         font-size: 1.8rem;
     }
 
-    .email-contatos ul {
-        font-size: 1.6rem;
+    .email-contatos li {
+        font-size: 1.1rem;
     }
 
     footer p {
@@ -481,7 +484,7 @@ footer p {
     }
 
     .contatos h2 {
-        font-size: 2.5rem;
+        font-size: 2.0rem;
     }
 
     .contatos p {
