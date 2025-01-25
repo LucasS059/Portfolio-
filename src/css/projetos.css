@@ -19,7 +19,6 @@
 html,
 body {
     height: 100%;
-    /* Garante que o body ocupe toda a altura da tela */
     margin: 0;
 }
 
@@ -32,7 +31,6 @@ body {
 
 main {
     flex: 1;
-    /* Faz o main ocupar o espaço restante entre o header e o footer */
 }
 
 
@@ -109,17 +107,14 @@ main {
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     z-index: 10;
-    /* Garante que o botão fique acima de outros elementos */
 }
 
 .carousel-control-prev {
     left: 10px;
-    /* Ajuste para ficar visível */
 }
 
 .carousel-control-next {
     right: 10px;
-    /* Ajuste para ficar visível */
 }
 
 .carousel-control-prev-icon,
@@ -128,9 +123,7 @@ main {
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    
 }
-
 
 #project-details {
     display: none;

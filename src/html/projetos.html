@@ -23,10 +23,10 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="#habilidades">Habilidades</a>
-                        <a class="nav-link" href="#certificados">Certificados</a>
-                        <a class="nav-link" href="#area-contatos">Conecte-se Comigo</a>
-                        <a class="nav-link" href="src/html/projetos.html">Projetos</a>
+                        <a class="nav-link" href="/index.html#habilidades">Habilidades</a>
+                        <a class="nav-link" href="/index.html#certificados">Certificados</a>
+                        <a class="nav-link" href="/index.html#area-contatos">Conecte-se Comigo</a>
+                        <a class="nav-link" href="/src/html/projetos.html">Projetos</a>
                     </div>
                 </div>
             </div>
@@ -36,21 +36,7 @@
     <main class="container my-5">
         <h1 class="text-center mb-4">Meus Projetos</h1>
         <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/src/assets/Images/logo-nova.jpeg" class="d-block w-100 rounded-3" alt="Saúde São Camilo"
-                        onclick="showDetails('saude')">
-                </div>
-                <div class="carousel-item">
-                    <img src="/src/assets/Images/code-notebook.jpg" class="d-block w-100 rounded-3" alt="Missão Ambiental"
-                        onclick="showDetails('missao')">
-                </div>
-                <div class="carousel-item">
-                    <img src="/src/assets/Images/teclado-branco.jpeg" class="d-block w-100 rounded-3" alt="Gestão de Extintores"
-                        onclick="showDetails('metro')">
-                </div>
-            </div>
-            <!-- Botões de controle fora da div carousel-inner -->
+            <div class="carousel-inner"></div>
             <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
@@ -61,7 +47,7 @@
             </button>
         </div>
 
-        <div id="project-details" class="mt-5">
+        <div id="project-details" class="mt-5" style="display: none;">
             <div class="d-flex justify-content-between align-items-center">
                 <h2 id="project-title"></h2>
                 <span class="close-btn" onclick="hideDetails()">&times;</span>
@@ -91,54 +77,52 @@
     </footer>
 
     <script>
-        // Dados dos projetos
-        const projects = {
-            saude: {
-                title: "Gestão de Saúde - São Camilo",
-                description: "Aplicativo para organizar consultas, horários de medicação e dados dos pacientes.",
-                photos: [
-                    "/src/assets/Images/saude-camilo1.png",
-                    "/src/assets/Images/saude-camilo2.png",
-                ]
-            },
-            missao: {
-                title: "Missão Ambiental do Ipiranga",
-                description: "Site responsivo sobre espécies de plantas, calendário e galeria de fotos.",
-                photos: [
-                    "/src/assets/Images/logo.jpeg",
-                    "/src/assets/Images/missao-ambiental2.png",
-                ]
-            },
-            metro: {
-                title: "Gestão de Extintores - Metrô",
-                description: "Aplicativo para administração de extintores pelos funcionários.",
-                photos: [
-                    "/src/assets/Images/metro1.png",
-                    "/src/assets/Images/metro2.png",
-                ]
+        async function fetchProjects() {
+            try {
+                console.log("Tentando buscar projetos...");
+                const response = await fetch("http://localhost:3001/test/projects");
+                if (!response.ok) {
+                    throw new Error(`Erro na API: ${response.status} ${response.statusText}`);
+                }
+                const projects = await response.json();
+                console.log("Projetos recebidos:", projects);
+                window.projects = projects;
+                renderCarousel(projects);
+            } catch (error) {
+                console.error("Erro ao buscar projetos:", error.message);
             }
-        };
+        }
 
-        // Exibir detalhes do projeto
-        function showDetails(projectKey) {
-            const project = projects[projectKey];
+
+        function renderCarousel(projects) {
+            const carouselInner = document.querySelector("#mainCarousel .carousel-inner");
+            carouselInner.innerHTML = projects.map((project, index) => `
+        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+            <img src="${project.photos[0]}" class="d-block w-100 rounded-3" alt="${project.title}" onclick="showDetails(${index})">
+        </div>
+    `).join("");
+        }
+
+        function showDetails(index) {
+            const project = window.projects[index];
             document.getElementById("project-title").textContent = project.title;
             document.getElementById("project-description").textContent = project.description;
 
             const photosContainer = document.getElementById("project-photos");
-            photosContainer.innerHTML = project.photos.map((photo, index) => `
-                <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${photo}" class="d-block w-100" alt="${project.title}">
-                </div>
-            `).join("");
+            photosContainer.innerHTML = project.photos.map((photo, i) => `
+        <div class="carousel-item ${i === 0 ? 'active' : ''}">
+            <img src="${photo}" class="d-block w-100" alt="${project.title}">
+        </div>
+    `).join("");
 
             document.getElementById("project-details").style.display = "block";
         }
 
-        // Esconder detalhes do projeto
         function hideDetails() {
             document.getElementById("project-details").style.display = "none";
         }
+
+        document.addEventListener("DOMContentLoaded", fetchProjects);
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
