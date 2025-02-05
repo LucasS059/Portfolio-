@@ -152,10 +152,16 @@ body {
 /* ========================= */
 /* Estilos de Habilidades e Certificados */
 /* ========================= */
-.habilidades,
-.certificados {
+
+.habilidades {
     padding: 2rem;
     background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    text-align: center;
+}
+
+.certificados {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f3f4f6, #cfd2d8);
     text-align: center;
 }
 
@@ -211,7 +217,7 @@ body {
 /* Estilos de Contato e Formulário */
 /* ========================= */
 .contatos {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
     padding: 40px 0;
 }
 
@@ -537,7 +543,7 @@ footer p {
     }
 }
 
-@media (max-width: 768px  ) {
+@media (max-width: 768px) {
     .descricao-pessoal h2 {
         font-size: 3rem;
     }
@@ -590,6 +596,7 @@ footer p {
         /* Garantir que o texto não ultrapasse */
     }
 }
+
 @media (max-width: 480px) {
     .barra-azul-2 {
         width: 60%;
