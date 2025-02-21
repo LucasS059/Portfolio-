@@ -1,3 +1,6 @@
+
+
+
 require('dotenv').config();
 const path = require('path');
 const express = require("express");
@@ -32,7 +35,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Conectado ao MongoDB"))
     .catch(err => console.error("Erro ao conectar ao MongoDB:", err));
 
-// Modelo do Projeto
+/* Modelo do Projeto */
 const projectSchema = new mongoose.Schema({
     title: String,
     description: String,
@@ -41,8 +44,8 @@ const projectSchema = new mongoose.Schema({
 });
 const Project = mongoose.model("Project", projectSchema);
 
-// Rota para obter os projetos
-app.get("/test/projects", async (req, res) => {
+/* Rota para obter os projetos */
+app.get("/Portfolio/projects", async (req, res) => {
     try {
         console.log("Recebendo requisição para obter projetos...");
         const projects = await Project.find();
@@ -54,7 +57,53 @@ app.get("/test/projects", async (req, res) => {
     }
 });
 
-// Função para redimensionar e comprimir imagens
+/* Modelo para Certificados */
+const certificateSchema = new mongoose.Schema({
+    title: { type: String, required: true },
+    description: String,
+    certificateUrl: String,
+    authenticityUrl: String
+});
+const Certificate = mongoose.model("Certificate", certificateSchema);
+
+/* Rota para obter os certificados */
+app.get("/Portfolio/certificates", async (req, res) => {
+    try {
+        console.log("Recebendo requisição para obter certificados...");
+        const certificates = await Certificate.find();
+        console.log("Certificados encontrados no banco:", certificates);
+        res.json(certificates);
+    } catch (err) {
+        console.error("Erro ao buscar certificados:", err);
+        res.status(500).json({ error: "Erro ao buscar certificados" });
+    }
+});
+
+/* Rota para adicionar um novo certificado */
+app.post("/Portfolio/certificates", async (req, res) => {
+    try {
+        const { title, description, certificateUrl, authenticityUrl } = req.body;
+        if (!title || !certificateUrl || !authenticityUrl) {
+            return res.status(400).json({ error: "Título, URL do certificado e URL de autenticidade são obrigatórios." });
+        }
+
+        const newCertificate = new Certificate({
+            title,
+            description,
+            certificateUrl,
+            authenticityUrl
+        });
+
+        await newCertificate.save();
+        console.log("Certificado adicionado:", newCertificate);
+        res.status(201).json(newCertificate);
+    } catch (err) {
+        console.error("Erro ao adicionar certificado:", err);
+        res.status(500).json({ error: "Erro ao adicionar certificado" });
+    }
+});
+
+/* Função para redimensionar e comprimir imagens */
 const resizeAndCompressImage = async (buffer) => {
     try {
         const resizedBuffer = await sharp(buffer)
@@ -69,7 +118,7 @@ const resizeAndCompressImage = async (buffer) => {
     }
 };
 
-// Rota para adicionar um novo projeto com imagens em base64
+/* Rota para adicionar um novo projeto com imagens em base64 */
 app.post("/Portfolio/projects", async (req, res) => {
     try {
         const { title, description, photos } = req.body;
@@ -102,7 +151,7 @@ app.post("/Portfolio/projects", async (req, res) => {
     }
 });
 
-// Rota para servir o index.html como fallback
+/* Rota para servir o index.html como fallback */
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public/html/index.html'));
 });

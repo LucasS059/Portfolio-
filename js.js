@@ -42,7 +42,7 @@ const projectSchema = new mongoose.Schema({
 const Project = mongoose.model("Project", projectSchema);
 
 // Rota para obter os projetos
-app.get("/test/projects", async (req, res) => {
+app.get("/Portfolio/projects", async (req, res) => {
     try {
         console.log("Recebendo requisição para obter projetos...");
         const projects = await Project.find();

@@ -72,3 +72,35 @@ footer {
 footer p {
     margin: 0;
 }
+
+.custom-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 1.5rem;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para os botões */
+.custom-btn {
+    border-radius: 20px;
+    padding: 0.75rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.custom-btn:hover {
+    transform: scale(1.02);
+}
+
+/* Ajustes no cabeçalho do card */
+.card-header {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 1rem;
+}
