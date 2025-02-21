@@ -129,16 +129,17 @@
             }
         }
 
-    function renderCarousel(projects) {
-        const carouselInner = document.querySelector("#mainCarousel .carousel-inner");
+        function renderCarousel(projects) {
+            const carouselInner = document.querySelector("#mainCarousel .carousel-inner");
 
-        carouselInner.innerHTML = projects.map((project, index) => `
+            console.log(projects[0].photos[0]); // Verifica a base64 da primeira imagem do primeiro projeto
+
+            carouselInner.innerHTML = projects.map((project, index) => `
         <div class="carousel-item ${index === 0 ? 'active' : ''}">
-            <img src="${Array.isArray(project.photos) ? project.photos[0] : project.photos}" class="d-block w-100 rounded-3" alt="${project.title}" onclick="showDetails(${index})">
+            <img src="${project.photos[0]}" class="d-block w-100 rounded-3" alt="${project.title}" onclick="showDetails(${index})">
         </div>
     `).join("");
-    }
-        
+        }
 
         function formatDescription(description) {
             return description.split('\n').map(line => {
