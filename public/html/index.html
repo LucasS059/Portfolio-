@@ -133,80 +133,27 @@
             </div>
         </section>
 
-<section class="certificados" id="certificados">
-    <h1 class="mb-4">Certificados</h1>
-    <div class="container">
-        <div id="carouselCertificados" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="card-certificados mx-auto">
-                        <h3>Desenvolvimento de Aplicações Híbridas com Flutter</h3>
-                        <p>Certificado de conclusão de 40 horas no Instituto Mauá de Tecnologia.</p>
-                        <div class="btn-container">
-                            <a href="/assets/pdf/CC2011-DesenvolvimentodjeAplicacoesHibridjascomFlutter-2024.pdf"
-                                target="_blank" class="btn btn-primary">Visualizar Certificado</a>
-                            <a href="http://www2.maua.br/valida-pae?codigo=B57C-BFA6-0586-FAC4-80A2-E216-8A05-7181"
-                                target="_blank" class="btn btn-secondary">Verificar Autenticidade</a>
-                        </div>
+        <section class="certificados" id="certificados">
+            <h1 class="mb-4">Certificados</h1>
+            <div class="container">
+                <div id="carouselCertificados" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Slides serão criados dinamicamente via JavaScript -->
                     </div>
-                </div>
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="card-certificados mx-auto">
-                        <h3>Criação de Jogos 2D através do Python</h3>
-                        <p>Certificado de conclusão de 40 horas no Instituto Mauá de Tecnologia.</p>
-                        <div class="btn-container">
-                            <a href="/assets/pdf/EN3027-Criacaodjejogos2DatravesdjoPython-2024.pdf" target="_blank"
-                                class="btn btn-primary">Visualizar Certificado</a>
-                            <a href="http://www2.maua.br/valida-pae?codigo=32F8-53AE-0B36-1195-02C4-4F34-81AC-526A"
-                                target="_blank" class="btn btn-secondary">Verificar Autenticidade</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="card-certificados mx-auto">
-                        <h3>Imersão Front-End 2ª Edição</h3>
-                        <p>Certificado de conclusão da imersão com carga horária estimada em 5 horas pela alura.</p>
-                        <div class="btn-container">
-                            <a href="/assets/pdf/Lucas SIlva Barboza - Imersão FrontEnd.pdf" target="_blank"
-                                class="btn btn-primary">Visualizar Certificado</a>
-                            <a href="https://cursos.alura.com.br/immersion/certificate/14aa48d5-3df2-436a-ac7f-8517ef96ac32?lang"
-                                target="_blank" class="btn btn-secondary">Verificar Autenticidade</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 4 -->
-                <div class="carousel-item">
-                    <div class="card-certificados mx-auto">
-                        <h3>HTML e CSS: ambientes de desenvolvimento, estrutura de arquivos e tags</h3>
-                        <p>Certificado de conclusão do curso online com carga horária estimada em 8 horas pela alura.
-                        </p>
-                        <div class="btn-container">
-                            <a href="/assets/pdf/Lucas SIlva Barboza - Curso HTML e CSS_ ambientes de desenvolvimento, estrutura de arquivos e tags - Alura.pdf"
-                                target="_blank" class="btn btn-primary">Visualizar Certificado</a>
-                            <a href="https://cursos.alura.com.br/certificate/2a4b2d56-5f28-484b-89d8-d7a2361af54b?lang"
-                                target="_blank" class="btn btn-secondary">Verificar Autenticidade</a>
-                        </div>
-                    </div>
+                    <!-- Controles do Carrossel -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCertificados"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselCertificados"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Próximo</span>
+                    </button>
                 </div>
             </div>
-            <!-- Controles do Carrossel -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCertificados"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselCertificados"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Próximo</span>
-            </button>
-        </div>
-    </div>
-</section>
-
+        </section>
 
         <section class="contatos" id="area-contatos">
             <div class="container">
@@ -269,18 +216,47 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
+        // Exibe ou oculta o link de adicionar projetos conforme ambiente
         document.addEventListener("DOMContentLoaded", function () {
             const addProjectsLink = document.getElementById("add-projects-link");
-
             const isProduction = window.location.hostname !== "localhost";
-
-            if (isProduction) {
-                addProjectsLink.style.display = "none";
-            } else {
-                addProjectsLink.style.display = "block";
-            }
+            addProjectsLink.style.display = isProduction ? "none" : "block";
         });
 
+        // Ao carregar a página, busca os certificados do MongoDB e popula o carrossel
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('https://portfolio-yg0y.onrender.com/Portfolio/certificates')
+                .then(response => response.json())
+                .then(certificates => {
+                    const carouselInner = document.querySelector('.carousel-inner');
+                    carouselInner.innerHTML = ''; // Limpa conteúdo anterior, se houver
+
+                    if (certificates.length === 0) {
+                        carouselInner.innerHTML = '<div class="carousel-item active"><p class="text-center">Nenhum certificado encontrado.</p></div>';
+                        return;
+                    }
+
+                    certificates.forEach((certificate, index) => {
+                        const activeClass = index === 0 ? ' active' : '';
+                        const slide = document.createElement('div');
+                        slide.className = 'carousel-item' + activeClass;
+                        slide.innerHTML = `
+                  <div class="card-certificados mx-auto">
+                    <h3>${certificate.title}</h3>
+                    <p>${certificate.description}</p>
+                    <div class="btn-container">
+                      <a href="${certificate.certificateUrl}" target="_blank" class="btn btn-primary">Visualizar Certificado</a>
+                      <a href="${certificate.authenticityUrl}" target="_blank" class="btn btn-secondary">Verificar Autenticidade</a>
+                    </div>
+                  </div>
+                `;
+                        carouselInner.appendChild(slide);
+                    });
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar certificados:', error);
+                });
+        });
     </script>
 </body>
 
