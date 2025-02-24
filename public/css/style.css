@@ -34,15 +34,23 @@ body {
 
 .navbar {
     background-color: var(--primary-color);
-    padding: 1.5rem;
+    padding: 0.2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+.navbar-brand{
+    display: flex;
+    justify-content: center;
+}
+
+a.navbar-brand {
+    margin: 0px;
+}
+
 .navbar-brand img {
-    margin-left: 20px;
-    width: 90px;
+    width: 30%;
     height: auto;
 }
 
@@ -68,7 +76,7 @@ body {
 
 .sobre-mim {
     position: relative;
-    height: 99.6vh;
+    height: 91vh;
     background: url('/assets/Images/teclado-branco.jpeg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
