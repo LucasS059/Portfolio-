@@ -29,6 +29,29 @@ body {
     flex-direction: column;
     justify-content: space-between;
     font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand img {
+    margin-left: 20px;
+    width: 90px;
+    height: auto;
+}
+
+.nav-link {
+    color: var(--white) !important;
+}
+
+.nav-link:hover {
+    color: var(--text-color) !important;
 }
 
 .barra-azul {
@@ -43,125 +66,97 @@ body {
     background-color: var(--primary-color);
 }
 
-.navbar {
-    background-color: var(--primary-color);
-    padding: 1.5rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar-brand img {
-    height: 40px;
-    width: auto;
-    margin-left: 20px;
-}
-
-.nav-link {
-    color: var(--white) !important;
-}
-
-.nav-link:hover {
-    color: var(--text-color) !important;
-}
-
-#habilidades,
-#certificados,
-#area-contatos {
-    padding-top: 80px;
-}
-
 .sobre-mim {
-    background-image: url('/assets/Images/teclado-branco.jpeg');
-    background-size: cover;
+    position: relative;
     height: 99.6vh;
-    background-position: center;
+    background: url('/assets/Images/teclado-branco.jpeg') no-repeat center center/cover;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    text-align: center;
+    padding: 20px;
 }
 
-.sobre-mim::before {
-    content: '';
+.sobre-mim .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
-.foto {
-    width: 100%;
-    height: auto;
-    max-width: 500px;
-    object-fit: cover;
-    border-radius: 10%;
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.foto-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    width: 100%;
-    max-width: 500px;
+.card-sobre-mim {
     position: relative;
     z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
-.descricao-pessoal {
+.sobre-mim-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.sobre-mim-image img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sobre-mim-text {
+    flex: 1;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    z-index: 2;
-    color: var(--white);
-    max-width: 100%;
-    padding: 20px;
     text-align: center;
 }
 
-.descricao-pessoal h2 {
-    font-size: 6rem;
+.sobre-mim-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
-.descricao-pessoal p {
-    font-size: 2.2rem;
+.sobre-mim-text p {
+    font-size: 1.6rem;
     line-height: 1.6;
-    max-width: 80%;
-    padding-top: 15px;
+    margin-bottom: 30px;
+    color: var(--text-color);
 }
 
-.habilidades {
-    padding: 2rem;
-    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);    
-    text-align: center;
+.btn-contact {
+    align-self: center;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
+.btn-contact:hover {
+    background-color: #0056b3;
+}
+
+.habilidades,
 .certificados {
     padding: 2rem;
-    background: linear-gradient(135deg, #f3f4f6, #cfd2d8);
+    background: linear-gradient(135deg, #f3f4f6, #f3f4f6);
     text-align: center;
 }
 
-/* Setas do carrossel customizadas */
-.carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23007BFF' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.207 8l6.147 5.646a.5.5 0 0 1-.708.708l-6.5-6a.5.5 0 0 1 0-.708l6.5-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E") !important;
-}
-
-.carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23007BFF' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 0 0 .708L10.793 8 4.646 14.354a.5.5 0 0 0 .708.708l6.5-6a.5.5 0 0 0 0-.708l-6.5-6a.5.5 0 0 0-.708 0z'/%3E%3C/svg%3E") !important;
-}
-
-.habilidades .cards-container,
-.certificados .certificados-container {
+.cards-container,
+.certificados-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -206,6 +201,64 @@ body {
 .card-certificados:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.projetos {
+    position: relative;
+    background: url('/assets/Images/software-developer.jpg') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    padding: 50px;
+}
+
+.projetos .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.projetos .content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.projetos h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.projetos p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.projetos .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+}
+
+.projetos .btn:hover {
+    background-color: #0056b3;
 }
 
 .contatos {
@@ -328,9 +381,8 @@ body {
 
 .btn-container .btn {
     flex: 1;
-    max-width: 150px;
     padding: 5px 10px;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     text-align: center;
 }
 
@@ -476,29 +528,30 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    .descricao-pessoal h2 {
-        font-size: 3rem;
+    .card-.sobre-mim {
+        flex-direction: column;
     }
 
-    .descricao-pessoal p {
-        font-size: 2.2rem;
-        line-height: 1.6;
-        max-width: 80%;
+    .sobre-mim-text {
+        padding: 20px;
+        text-align: center;
     }
 
-    .card-habilidades,
-    .card-certificados {
-        min-height: 300px;
+    .btn-contact {
+        align-self: center;
     }
 
-    .card-habilidades h3,
-    .card-certificados h3 {
+    .sobre-mim-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .sobre-mim-text p {
         font-size: 1.4rem;
     }
 
-    .card-habilidades p,
-    .card-certificados p {
-        font-size: 1rem;
+    .cards-container .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 
     .contatos h2 {
@@ -510,7 +563,7 @@ footer p {
     }
 
     .email-contatos ul {
-        font-size: 1.0rem;
+        font-size: 1rem;
     }
 }
 
@@ -521,7 +574,6 @@ footer p {
 
     .descricao-pessoal p {
         font-size: 1.2rem;
-        line-height: 1.5;
         max-width: 90%;
     }
 }
@@ -560,5 +612,45 @@ footer p {
     .email-contatos ul li img {
         width: 35px;
         padding-right: 10px;
+    }
+}
+
+@media (min-width: 2560px) and (min-height: 2100px) {
+    html {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2,
+    .descricao-pessoal h2 {
+        font-size: 7rem;
+    }
+
+    p,
+    .descricao-pessoal p {
+        font-size: 2.5rem;
+    }
+
+    .card-habilidades h3,
+    .card-certificados h3 {
+        font-size: 2.5rem;
+    }
+
+    .card-habilidades p,
+    .card-certificados p {
+        font-size: 1.6rem;
+    }
+
+    .navbar-brand img {
+        width: 120px;
+    }
+
+    .card-habilidades,
+    .card-certificados {
+        min-height: 400px;
+        max-width: 1000px;
     }
 }

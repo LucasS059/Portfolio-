@@ -1,63 +1,29 @@
 :root {
     --primary-color: #007BFF;
-    --secondary-color: #6c757d;
     --background-color: #f8f8f8;
     --text-color: #333;
-    --light-text-color: #666;
     --white: #fff;
-    --black: #000;
-    --font-size-base: 16px;
-    --font-size-large: 2rem;
-    --font-size-medium: 1.4rem;
-    --font-size-small: 1rem;
     --border-radius: 8px;
+    --transition-speed: 0.3s;
 }
 
-/* ========================= */
-/* Estilos Globais */
-/* ========================= */
 html,
 body {
     height: 100%;
     margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     font-family: 'Roboto', sans-serif;
 }
 
-main {
-    flex: 1;
-}
-
-
-.barra-azul {
-    width: 100%;
-    height: 4px;
-    background-color: var(--primary-color);
-}
-
-.barra-azul-2 {
-    width: 20%;
-    height: 5px;
-    background-color: var(--primary-color);
-}
-
-.navbar {
-    background-color: var(--primary-color);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1050;
-    padding-top: 10px;
-}
-
-main{
+body {
+    background-color: var(--background-color);
     padding-top: 80px;
 }
+
+.custom-menu {
+    background-color: var(--primary-color);
+    padding: 1.5rem;
+}
+
 .navbar-brand img {
     height: 40px;
     width: auto;
@@ -72,15 +38,37 @@ main{
     color: var(--text-color) !important;
 }
 
-.navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.5);
+.barra-azul {
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-color);
+}
+
+.barra-azul-2 {
+    width: 20%;
+    height: 5px;
+    background-color: var(--primary-color);
+}
+
+.projetos {
+    position: relative;
+    background: url('/assets/Images/software-developer.jpg') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    padding: 50px 0;
+}
+
+.project-intro h1 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+}
+
+.project-intro p {
+    font-size: 1.6rem;
+    color: var(--text-color);
 }
 
 #mainCarousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
     border-radius: var(--border-radius);
     overflow: hidden;
     position: relative;
@@ -99,7 +87,6 @@ main{
 
 .carousel-control-prev,
 .carousel-control-next {
-    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--primary-color);
@@ -112,7 +99,6 @@ main{
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 10;
 }
 
 .carousel-control-prev {
@@ -131,8 +117,7 @@ main{
     height: 20px;
 }
 
-#project-details {
-    display: none;
+.project-details {
     background-color: var(--white);
     padding: 2rem;
     border-radius: var(--border-radius);
@@ -140,10 +125,16 @@ main{
     margin-top: 2rem;
 }
 
-#project-details .close-btn {
+.project-details .close-btn {
     cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--secondary-color);
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+#projectModalCarousel .carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
 }
 
 footer {
@@ -156,4 +147,39 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+@media (max-width: 768px) {
+    .carousel-inner img {
+        height: 400px;
+    }
+}
+
+/* Estilos para Tela 4K */
+@media (min-width: 2560px) and (min-height: 2100px) {
+    html {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    .carousel-inner img {
+        height: 800px;
+    }
+}
+
+/* Espaço extra para completar a tela */
+.project-intro {
+    margin-bottom: 3rem;
+    text-align: center;
 }
