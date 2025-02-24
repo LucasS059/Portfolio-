@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // fetch("http://localhost:3002/Portfolio/certificates")
   fetch("https://portfolio-yg0y.onrender.com/Portfolio/certificates")
     .then((response) => response.json())
     .then((certificates) => {

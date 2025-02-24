@@ -14,8 +14,8 @@
 }
 
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -92,7 +92,7 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     background: var(--white);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     display: flex;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -140,7 +140,7 @@ body {
     background-color: var(--primary-color);
     color: var(--white);
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     transition: background-color 0.3s;
 }
 
@@ -193,7 +193,6 @@ body {
     font-size: 1.1rem;
     line-height: 1.4;
     color: var(--text-color);
-    margin: 0;
     padding-top: 5px;
 }
 
@@ -365,7 +364,6 @@ body {
 
 .botao:hover {
     background-color: #0056b3;
-    color: white;
     transform: scale(1.05);
 }
 
@@ -373,10 +371,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
     gap: 10px;
     max-width: 100%;
-    margin-top: 10px;
 }
 
 .btn-container .btn {
@@ -398,61 +394,98 @@ footer p {
     margin: 0;
 }
 
-
-@media (max-width: 2560px) {
-    .descricao-pessoal h2 {
-        font-size: 5rem;
+@media (min-width: 2560px) {
+    html {
+        font-size: 18px;
     }
 
-    .descricao-pessoal p {
-        font-size: 1.5rem;
-        line-height: 1.5;
-        max-width: 50%;
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .sobre-mim {
+        height: auto;
+        padding: 40px;
+        padding-top: 120px;
+    }
+
+    .card-sobre-mim {
+        max-width: 1920px;
+        margin: 0px;
+    }
+
+    .habilidades h1,
+    .certificados h1 {
+        font-size: 3.5rem;
+    }
+
+    .projetos h1 {
+        font-size: 3.5rem;
+    }
+
+    .projetos p {
+        font-size: 2.0rem;
+    }
+
+    .projetos .content {
+        max-width: 1800px;
+    }
+
+    .projetos .btn {
+        margin: 10px auto;
+        padding: 15px 25px;
+        font-size: 1.8rem;
+    }
+
+    .navbar-brand img {
+        width: 120px;
     }
 
     .card-habilidades h3,
     .card-certificados h3 {
-        font-size: 1.9rem;
+        font-size: 2.0rem;
     }
 
-    .card-habilidades p,
-    .card-certificados p {
+    .card-habilidades,
+    .card-certificados {
+        min-height: 400px;
+        max-width: 1000px;
+    }
+
+    .btn-container .btn {
+        max-width: 300px;
+        padding: 15px;
         font-size: 1.4rem;
     }
 
-    .foto {
-        max-width: 300px;
-    }
-
-    .foto-container {
-        max-width: 290px;
-    }
-
-    .contatos h2 {
-        font-size: 4rem;
+    .contatos h1 {
+        font-size: 3.5rem;
     }
 
     .contatos p {
-        font-size: 1.8rem;
+        font-size: 2.0rem;
     }
 
-    .email-contatos li {
-        font-size: 1.1rem;
+    .social-icon img {
+        width: 100px;
+        height: 100px;
     }
 
-    footer p {
-        font-size: 1.5rem;
+    .email-contatos h2 {
+        font-size: 3.0rem;
+    }
+
+    .email-contatos a {
+        font-size: 2.0rem;
+    }
+
+    footer {
+        font-size: 1.6rem;
+        padding: 20px;
     }
 }
 
 @media (max-width: 1920px) {
-    .descricao-pessoal h2 {
-        font-size: 3rem;
-    }
-
-    .descricao-pessoal p {
-        font-size: 1.2rem;
-    }
 
     .card-habilidades,
     .card-certificados {
@@ -463,14 +496,6 @@ footer p {
         max-width: 120px;
         padding: 5px;
         font-size: 0.8rem;
-    }
-
-    .foto {
-        max-width: 200px;
-    }
-
-    .foto-container {
-        max-width: 190px;
     }
 
     .contatos h2 {
@@ -487,12 +512,24 @@ footer p {
 }
 
 @media (max-width: 1440px) {
-    .descricao-pessoal h2 {
-        font-size: 3rem;
+    .sobre-mim {
+        height: auto;
+        padding: 10px;
+        padding-top: 90px;
     }
 
-    .descricao-pessoal p {
+    .sobre-mim-text h1 {
+        font-size: 3.0rem;
+    }
+
+    .sobre-mim-text p {
         font-size: 1.2rem;
+    }
+
+    .btn-contact {
+        margin: 10px auto;
+        padding: 15px 20px;
+        font-size: 1.0rem;
     }
 
     .card-habilidades,
@@ -527,31 +564,34 @@ footer p {
     }
 }
 
-@media (max-width: 768px) {
-    .card-.sobre-mim {
-        flex-direction: column;
+@media (max-width: 1024px) {
+    .card-sobre-mim {
+        max-width: 90%;
+        margin: 20px auto;
     }
 
-    .sobre-mim-text {
-        padding: 20px;
-        text-align: center;
-    }
-
-    .btn-contact {
-        align-self: center;
+    .sobre-mim {
+        height: auto;
+        padding: 10px;
+        padding-top: 90px;
     }
 
     .sobre-mim-text h1 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .sobre-mim-text p {
-        font-size: 1.4rem;
+        font-size: 1.0rem;
     }
+}
 
-    .cards-container .col-md-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
+@media (max-width: 768px) {
+
+
+    .btn-contact {
+        margin: 10px auto;
+        padding: 10px 15px;
+        font-size: 1.0rem;
     }
 
     .contatos h2 {
@@ -567,62 +607,64 @@ footer p {
     }
 }
 
-@media (max-width: 756px) {
-    .descricao-pessoal h2 {
-        font-size: 2rem;
-    }
-
-    .descricao-pessoal p {
-        font-size: 1.2rem;
-        max-width: 90%;
-    }
-}
-
 @media (max-width: 480px) {
     .barra-azul-2 {
         width: 60%;
     }
 
-        .sobre-mim {
-            height: auto;
-            /* Ajusta a altura conforme o conteúdo */
-            padding: 10px;
-        }
-    
-        .card-sobre-mim {
-            flex-direction: column;
-            width: 100%;
-            margin: 10px auto;
-        }
-    
-        .sobre-mim-image,
-        .sobre-mim-text {
-            width: 100%;
-        }
-    
-        .sobre-mim-image img {
-            width: 100%;
-            height: auto;
-        }
-    
-        .sobre-mim-text {
-            padding: 10px;
-            text-align: center;
-        }
-    
-        .sobre-mim-text h1 {
-            font-size: 1.8rem;
-        }
-    
-        .sobre-mim-text p {
-            font-size: 1rem;
-        }
-    
-        .btn-contact {
-            margin: 10px auto;
-            padding: 10px 15px;
-            font-size: 0.9rem;
-        }
+    .sobre-mim {
+        height: auto;
+        padding: 10px;
+    }
+
+    .card-sobre-mim {
+        flex-direction: column;
+        width: 100%;
+        margin: 90px auto;
+    }
+
+    .sobre-mim-image,
+    .sobre-mim-text {
+        width: 100%;
+    }
+
+    .sobre-mim-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .sobre-mim-text {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .sobre-mim-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .sobre-mim-text p {
+        font-size: 1rem;
+    }
+
+    .projetos h1 {
+        font-size: 1.8rem;
+    }
+
+    .projetos p {
+        font-size: 1rem;
+    }
+
+    .btn-contact {
+        margin: 10px auto;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .projetos .btn {
+        margin: 10px auto;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
 
     .card-certificados {
         min-height: 200px;
@@ -641,45 +683,5 @@ footer p {
     .email-contatos ul li img {
         width: 35px;
         padding-right: 10px;
-    }
-}
-
-@media (min-width: 2560px) and (min-height: 2100px) {
-    html {
-        font-size: 18px;
-    }
-
-    h1 {
-        font-size: 3.5rem;
-    }
-
-    h2,
-    .descricao-pessoal h2 {
-        font-size: 7rem;
-    }
-
-    p,
-    .descricao-pessoal p {
-        font-size: 2.5rem;
-    }
-
-    .card-habilidades h3,
-    .card-certificados h3 {
-        font-size: 2.5rem;
-    }
-
-    .card-habilidades p,
-    .card-certificados p {
-        font-size: 1.6rem;
-    }
-
-    .navbar-brand img {
-        width: 120px;
-    }
-
-    .card-habilidades,
-    .card-certificados {
-        min-height: 400px;
-        max-width: 1000px;
     }
 }
