@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
 async function fetchProjects() {
     try {
         console.log("Tentando buscar projetos...");
-        // const response = await fetch("https://portfolio-yg0y.onrender.com/Portfolio/projects");
-        const response = await fetch("http://localhost:3002/Portfolio/projects");
+        const response = await fetch("https://portfolio-yg0y.onrender.com/Portfolio/projects");
+        // const response = await fetch("http://localhost:3002/Portfolio/projects");
         if (!response.ok) {
             throw new Error(`Erro na API: ${response.status} ${response.statusText}`);
         }
