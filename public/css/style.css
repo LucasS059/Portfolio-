@@ -583,17 +583,46 @@ footer p {
         width: 60%;
     }
 
-    .foto {
-        max-width: 290px;
-    }
-
-    .descricao-pessoal h2 {
-        font-size: 1.9rem;
-    }
-
-    .descricao-pessoal p {
-        font-size: 1rem;
-    }
+        .sobre-mim {
+            height: auto;
+            /* Ajusta a altura conforme o conteúdo */
+            padding: 10px;
+        }
+    
+        .card-sobre-mim {
+            flex-direction: column;
+            width: 100%;
+            margin: 10px auto;
+        }
+    
+        .sobre-mim-image,
+        .sobre-mim-text {
+            width: 100%;
+        }
+    
+        .sobre-mim-image img {
+            width: 100%;
+            height: auto;
+        }
+    
+        .sobre-mim-text {
+            padding: 10px;
+            text-align: center;
+        }
+    
+        .sobre-mim-text h1 {
+            font-size: 1.8rem;
+        }
+    
+        .sobre-mim-text p {
+            font-size: 1rem;
+        }
+    
+        .btn-contact {
+            margin: 10px auto;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+        }
 
     .card-certificados {
         min-height: 200px;
