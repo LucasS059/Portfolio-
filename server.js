@@ -44,9 +44,7 @@ const Project = mongoose.model("Project", projectSchema);
 /* Rota para obter os projetos */
 app.get("/Portfolio/projects", async (req, res) => {
     try {
-        console.log("Recebendo requisição para obter projetos...");
         const projects = await Project.find();
-        console.log("Projetos encontrados no banco:", projects);
         res.json(projects);
     } catch (err) {
         console.error("Erro ao buscar projetos:", err);
@@ -66,9 +64,7 @@ const Certificate = mongoose.model("Certificate", certificateSchema);
 /* Rota para obter os certificados */
 app.get("/Portfolio/certificates", async (req, res) => {
     try {
-        console.log("Recebendo requisição para obter certificados...");
         const certificates = await Certificate.find();
-        console.log("Certificados encontrados no banco:", certificates);
         res.json(certificates);
     } catch (err) {
         console.error("Erro ao buscar certificados:", err);
@@ -158,4 +154,5 @@ const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Acesse em http://localhost:${PORT}`);	
 });
