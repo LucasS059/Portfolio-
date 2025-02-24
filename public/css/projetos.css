@@ -154,7 +154,6 @@ footer p {
     }
 }
 
-/* Estilos para Tela 4K */
 @media (min-width: 2560px) and (min-height: 2100px) {
     html {
         font-size: 18px;
@@ -177,7 +176,6 @@ footer p {
     }
 }
 
-/* Espaço extra para completar a tela */
 .project-intro {
     margin-bottom: 3rem;
     text-align: center;
