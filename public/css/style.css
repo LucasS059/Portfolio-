@@ -76,7 +76,7 @@ a.navbar-brand {
 
 .sobre-mim {
     position: relative;
-    height: 91vh;
+    height: auto;
     background: url('/assets/Images/teclado-branco.jpeg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
