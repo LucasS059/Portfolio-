@@ -236,7 +236,7 @@ a.navbar-brand {
 }
 
 .formacao {
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
 }
 
@@ -486,7 +486,8 @@ footer p {
 @media (max-width: 1920px) {
 
     .card-habilidades,
-    .card-certificados , .card-formacao {
+    .card-certificados,
+    .card-formacao {
         min-height: 300px;
     }
 
@@ -536,7 +537,8 @@ footer p {
     }
 
     .card-habilidades p,
-    .card-certificados p, .card-formacao p {
+    .card-certificados p,
+    .card-formacao p {
         font-size: 1rem;
     }
 
@@ -650,10 +652,12 @@ footer p {
         justify-content: center;
         gap: 10px;
     }
+
     .btn-container a {
         display: flex;
         font-size: 0.6rem;
     }
+
     .projetos .btn {
         margin: 10px auto;
         padding: 10px 15px;
