@@ -5,6 +5,9 @@
     --font-size-base: 16px;
     --font-size-small: 1rem;
     --border-radius: 8px;
+    --background-color: #f8f8f8;
+    --light-text-color: #666;
+    --black: #000;
 }
 
 * {
@@ -224,7 +227,7 @@ a.navbar-brand {
 .card-certificados p {
     font-size: 1.1rem;
     line-height: 1.4;
-    color: var(--text-color);
+    color: var (--text-color);
     padding-top: 5px;
 }
 
@@ -313,23 +316,39 @@ a.navbar-brand {
 
 .contatos {
     padding: 40px 0;
+    background-color: var(--background-color);
 }
 
 .contato-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .informacoes {
-    text-align: center;
+    flex: 1;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.formulario {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .social-icons {
     display: flex;
     gap: 15px;
     margin-bottom: 30px;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .social-icon img {
@@ -351,6 +370,57 @@ a.navbar-brand {
     margin: 10px 0;
 }
 
+.email-contatos a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.email-contatos a:hover {
+    color: var(--primary-color);
+}
+
+.email-contatos img {
+    margin-right: 10px;
+    width: 30px;
+}
+
+.formulario h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.formulario label {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--light-text-color);
+    border-radius: var(--border-radius);
+}
+
+.formulario button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formulario button:hover {
+    background-color: #0056b3;
+}
+
 footer {
     background-color: var(--primary-color);
     padding: 20px;
@@ -361,38 +431,6 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    width: 50px;
-    height: 50px;
-    background-color: #007BFF;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.8;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 20px;
-    height: 20px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M4.854 0.146a.5.5 0 010 .708L1.707 4l3.147 3.146a.5.5 0 01-.708.708l-3.5-3.5a.5.5 0 010-.708l3.5-3.5a.5.5 0 01.708 0z'/%3E%3C/svg%3E");
-}
-
-.carousel-control-next-icon {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M3.146 0.146a.5.5 0 000 .708L6.293 4 3.146 7.146a.5.5 0 10.708.708l3.5-3.5a.5.5 0 000-.708l-3.5-3.5a.5.5 0 00-.708 0z'/%3E%3C/svg%3E");
 }
 
 /* Media Queries */
@@ -463,6 +501,7 @@ footer p {
     .contatos p {
         font-size: 2rem;
     }
+
 
     .social-icon img {
         width: 100px;
@@ -603,6 +642,31 @@ footer p {
     .email-contatos ul {
         font-size: 1rem;
     }
+
+    .contato-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .informacoes {
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .formulario {
+        padding: 20px;
+    }
+
+    .email-contatos ul {
+        display: inline-block;
+        justify-content: center;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -678,8 +742,31 @@ footer p {
         padding-right: 10px;
     }
 
+    .email-contatos ul {
+        display: inline-block;
+        justify-content: center;
+    }
+
     .carousel-control-prev,
     .carousel-control-next {
         display: none !important;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .contato-container {
+        padding: 10px;
+    }
+
+    .informacoes {
+        margin-bottom: 10px;
+    }
+
+    .formulario {
+        padding: 10px;
     }
 }

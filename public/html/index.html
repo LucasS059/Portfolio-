@@ -193,9 +193,10 @@
 
         <section class="contatos" id="area-contatos">
             <div class="container">
-                <h1 class="text-center mb-4">Conecte-se Comigo</h1>
+                <h1 class="text-center mb-4">Contatos</h1>
                 <div class="contato-container row">
-                    <div class="informacoes col-lg-12 col-md-12 mb-4">
+                    <div class="informacoes col-lg-6 col-md-12 mb-4">
+                        <h1 class="mb-4">Entre em contato</h1>
                         <p>
                             Entre no meu LinkedIn para fortalecer conexões e trocar experiências profissionais. No meu
                             GitHub, acompanhe meus projetos e veja como transformo ideias em soluções práticas.
@@ -207,9 +208,6 @@
                             <a href="https://www.linkedin.com/in/lucas-silva-barboza-a2568b285/" target="_blank"
                                 class="social-icon">
                                 <img src="/assets/icons/linkedin.svg" alt="LinkedIn" />
-                            </a>
-                            <a href="https://www.instagram.com/lucas_s059/" target="_blank" class="social-icon">
-                                <img src="/assets/icons/instagram.svg" alt="Instagram" />
                             </a>
                         </div>
                         <div class="email-contatos">
@@ -229,6 +227,23 @@
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="formulario col-lg-6 col-md-12">
+                        <h2>Ou envie um email diretamente</h2>
+                        <form id="formContato" action="/formContato" method="POST">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome"
+                                required>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Seu email"
+                                required>
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control" rows="4"
+                                placeholder="Sua mensagem" required></textarea>
+                            <div id="mensagem-feedback" class="alert" style="margin-top: 5px;"></div>
+
+                            <button type="submit" class="btn-contact mt-3">Enviar</button>
+                        </form>
                     </div>
                 </div>
             </div>

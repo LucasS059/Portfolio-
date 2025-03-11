@@ -4,6 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const sharp = require('sharp');
+const axios = require('axios');
 
 const app = express();
 
@@ -149,10 +150,31 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public/html/index.html'));
 });
 
+app.post('/formContato', async (req, res) => {
+    const { nome, email, mensagem } = req.body;
+
+    if (!nome || !email || !mensagem) {
+        return res.status(400).json({ error: 'Formulário incompleto' });
+    }
+
+    try {
+        const response = await axios.post(process.env.FORMSPREE_URL, {
+            nome,
+            email,
+            mensagem
+        });
+
+        console.log("Resposta do Formspree:", response.data);
+        res.status(200).json({ message: 'Formulário enviado com sucesso!' });
+    } catch (error) {
+        console.error("Erro ao enviar o formulário:", error.response ? error.response.data : error.message);
+        res.status(500).json({ error: 'Erro ao enviar o formulário' });
+    }
+});
+
 // Configuração do servidor
 const PORT = process.env.PORT || 3002;
-
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
-    console.log(`Acesse em http://localhost:${PORT}`);	
+    console.log(`Acesse em http://localhost:${PORT}`);
 });
