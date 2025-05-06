@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 // Conexão com o MongoDB
 const uri = process.env.MONGODB_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri)
     .then(() => console.log("Conectado ao MongoDB"))
     .catch(err => console.error("Erro ao conectar ao MongoDB:", err));
 
@@ -62,9 +62,20 @@ const certificateSchema = new mongoose.Schema({
 });
 const Certificate = mongoose.model("Certificate", certificateSchema);
 
-/* Rota para obter os certificados */
+// /* Rota para obter os certificados */
+// app.get("/Portfolio/certificates", async (req, res) => {
+//     try {
+//         const certificates = await Certificate.find();
+//         res.json(certificates);
+//     } catch (err) {
+//         console.error("Erro ao buscar certificados:", err);
+//         res.status(500).json({ error: "Erro ao buscar certificados" });
+//     }
+// });
+
 app.get("/Portfolio/certificates", async (req, res) => {
     try {
+        console.log("Buscando certificados...");
         const certificates = await Certificate.find();
         res.json(certificates);
     } catch (err) {
@@ -72,6 +83,7 @@ app.get("/Portfolio/certificates", async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar certificados" });
     }
 });
+
 
 /* Rota para adicionar um novo certificado */
 app.post("/Portfolio/certificates", async (req, res) => {
