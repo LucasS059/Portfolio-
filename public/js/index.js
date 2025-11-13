@@ -1,4 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Back to top visibility
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 350) backToTop.classList.add('show');
+      else backToTop.classList.remove('show');
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  // Active nav link highlight on scroll
+  const sections = ['sobre','habilidades','formacao','certificados','projetos','area-contatos'];
+  const navLinks = Array.from(document.querySelectorAll('.navbar .nav-link'));
+  const map = new Map(sections.map(id => [id, document.getElementById(id)]));
+  function updateActive() {
+    let activeId = null;
+    const offset = 120;
+    sections.forEach(id => {
+      const el = map.get(id);
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const top = rect.top - offset;
+      if (top <= 0) activeId = id;
+    });
+    navLinks.forEach(a => {
+      const isActive = a.getAttribute('href') === `#${activeId}`;
+      a.classList.toggle('active', isActive);
+      if (isActive) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+  // Copy email button
+  const copyBtn = document.getElementById('copyEmail');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const email = copyBtn.getAttribute('data-email');
+      navigator.clipboard.writeText(email).then(() => {
+        copyBtn.textContent = 'Copiado!';
+        setTimeout(() => (copyBtn.textContent = 'Copiar email'), 1500);
+      });
+    });
+  }
+
   // fetch("http://localhost:3002/Portfolio/certificates")
   fetch("https://portfolio-yg0y.onrender.com/Portfolio/certificates")
     .then((response) => response.json())
@@ -51,7 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
     return nameRegex.test(name);
   }
 
-  document.getElementById('formContato').addEventListener('submit', function (e) {
+  const formEl = document.getElementById('formContato');
+  if (!formEl) return; // guard if form removed
+  formEl.addEventListener('submit', function (e) {
     e.preventDefault();
 
     const nome = document.getElementById('nome').value.trim();

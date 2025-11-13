@@ -6,8 +6,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- SEO Meta Tags -->
-    <title>Lucas Silva Barboza - Desenvolvedor Fullstack | Portfólio</title>
-    <meta name="description" content="Lucas Silva Barboza, estudante de Ciência da Computação e desenvolvedor fullstack. Especialista em React, Node.js, Python, Flutter e desenvolvimento web moderno. Confira meus projetos e entre em contato." />
+    <title>Lucas Silva Barboza — Estudante de Ciência da Computação</title>
+    <meta name="description" content="Lucas Silva Barboza — estudante de Ciência da Computação e estagiário de desenvolvimento. Portfolio com projetos acadêmicos e pessoais em web e mobile." />
     <meta name="keywords" content="Lucas Silva Barboza, desenvolvedor fullstack, programador, Ciência da Computação, React, Node.js, Python, Flutter, portfolio desenvolvedor, desenvolvimento web, IMT Mauá" />
     <meta name="author" content="Lucas Silva Barboza" />
     <meta name="robots" content="index, follow" />
@@ -16,161 +16,119 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://portfolio-yg0y.onrender.com/" />
-    <meta property="og:title" content="Lucas Silva Barboza - Desenvolvedor Fullstack" />
-    <meta property="og:description" content="Portfólio de Lucas Silva Barboza, desenvolvedor fullstack especializado em tecnologias modernas. Confira meus projetos e habilidades." />
+    <meta property="og:title" content="Lucas Silva Barboza — Portfólio" />
+    <meta property="og:description" content="Estudante de Ciência da Computação e estagiário. Veja meus projetos acadêmicos e pessoais." />
     <meta property="og:image" content="https://portfolio-yg0y.onrender.com/assets/Images/Lucas.jpg" />
     <meta property="og:locale" content="pt_BR" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://portfolio-yg0y.onrender.com/" />
-    <meta name="twitter:title" content="Lucas Silva Barboza - Desenvolvedor Fullstack" />
-    <meta name="twitter:description" content="Portfólio de Lucas Silva Barboza, desenvolvedor fullstack. Confira meus projetos e habilidades." />
+    <meta name="twitter:title" content="Lucas Silva Barboza — Portfólio" />
+    <meta name="twitter:description" content="Estudante de Ciência da Computação e estagiário. Projetos acadêmicos e pessoais." />
     <meta name="twitter:image" content="https://portfolio-yg0y.onrender.com/assets/Images/Lucas.jpg" />
     
     <link rel="icon" href="/assets/Images/logo-nova.jpeg" type="image/png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <meta name="theme-color" content="#007BFF" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top custom-menu">
-            <div class="container-fluid justify-content-center">
-                <a class="navbar-brand" href="index.html">
-                    <img src="/assets/Images/logo-nova.jpeg" width="200" alt="Logo Lucas Silva" />
+        <nav class="navbar navbar-expand-lg fixed-top custom-menu navbar-dark" aria-label="Menu principal">
+            <div class="container">
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/assets/Images/logo-nova.jpeg" width="140" alt="Logo Lucas Silva" />
                 </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#formacao">Formação</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#certificados">Certificados</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#area-contatos">Contato</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
 
-    <section class="sobre-mim animated-section">
-        <div class="animated-overlay"></div>
-        <div class="card-sobre-mim">
-            <div class="profile-image">
-                <img src="/assets/Images/Lucas.jpg" alt="Lucas Silva encostado na parede do Museu do Ipiranga" />
+    <!-- Hero / Sobre -->
+    <section class="hero" id="sobre">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <span class="badge bg-primary-subtle text-primary fw-semibold mb-3">Estudante e estagiário</span>
+                    <h1 class="hero-title">Aprendendo e construindo projetos reais</h1>
+                    <p class="hero-subtitle">Estudante de Ciência da Computação (IMT) e estagiário de desenvolvimento.</p>
+                    <div class="d-flex gap-3 flex-wrap mt-3">
+                        <a href="/html/projetos.html" class="btn btn-primary btn-lg">Ver projetos</a>
+                        <a href="https://www.linkedin.com/in/lucas-silva-barboza-a2568b285/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-lg">LinkedIn</a>
+                        <a href="https://github.com/LucasS059" target="_blank" rel="noopener" class="btn btn-outline-primary btn-lg">GitHub</a>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2 mt-3 hero-about">
+                        <span class="about-chip"><i class="bi bi-check2-circle"></i> Aprendizado contínuo</span>
+                        <span class="about-chip"><i class="bi bi-check2-circle"></i> Projetos acadêmicos e pessoais</span>
+                        <span class="about-chip"><i class="bi bi-check2-circle"></i> Interesse em Front‑end, Back‑end e Mobile</span>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-photo shadow-lg">
+                        <img src="/assets/Images/Lucas.jpg" alt="Foto de perfil de Lucas Silva Barboza" loading="eager" decoding="async" fetchpriority="high"/>
+                    </div>
+                </div>
             </div>
-            <div class="profile-details">
-                <h1>Lucas Silva Barboza</h1>
-                <p>
-                    Sou estudante de Ciência da Computação no Instituto Mauá de Tecnologia e atuo como desenvolvedor
-                    fullstack.
-                    Apaixonado por tecnologia e inovação, dedico-me a transformar ideias em soluções completas e estou
-                    sempre em busca de novos desafios para crescer profissionalmente.
-                </p>
-                <a href="#area-contatos" class="btn-contact">Entre em Contato</a>
-            </div>
+
+            <!-- Removed stats for a simpler, student-focused hero -->
         </div>
     </section>
 
     <div class="barra-azul"></div>
 
-    <main>
-        <section class="habilidades" id="habilidades">
-            <h1 class="mb-4">Minhas Habilidades</h1>
+    <main id="main-content">
+        <section class="tech-section" id="habilidades">
             <div class="container">
-                <div class="cards-container row">
-                    <div class="col-md-12 col-lg-5 mb-4">
-                        <div class="card-habilidades">
-                            <h3>Desenvolvimento Web</h3>
-                            <p>
-                                Criação de websites modernos e responsivos utilizando HTML, CSS, JavaScript, React e
-                                Bootstrap.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-5 mb-4">
-                        <div class="card-habilidades">
-                            <h3>Desenvolvimento de Aplicativos</h3>
-                            <p>
-                                Desenvolvimento de aplicativos multiplataforma com Flutter e React Native utilizando
-                                Expo para Android e iOS.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-5 mb-4">
-                        <div class="card-habilidades">
-                            <h3>Back-End</h3>
-                            <p>
-                                Experiência com desenvolvimento back-end utilizando Python e Node.js para criação de
-                                APIs e sistemas robustos.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-5 mb-4">
-                        <div class="card-habilidades">
-                            <h3>Bancos de Dados</h3>
-                            <p>
-                                Gerenciamento e integração de bancos de dados MySQL e MongoDB para armazenamento e
-                                recuperação de dados eficientes.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-5 mb-4">
-                        <div class="card-habilidades">
-                            <h3>Versionamento de Código</h3>
-                            <p>
-                                Uso de Git e GitHub para controle de versão, colaboração em equipe e entrega contínua de
-                                projetos.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-5 mb-4">
-                        <div class="card-habilidades">
-                            <h3>Design de Interfaces</h3>
-                            <p>
-                                Conhecimento em UX/UI Design para criar interfaces intuitivas e acessíveis, focadas na
-                                melhor experiência do usuário.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-5 mb-4">
-                        <div class="card-habilidades">
-                            <h3>Desenvolvimento Ágil</h3>
-                            <p>
-                                Experiência com metodologias ágeis, como Scrum e Kanban, para garantir entregas
-                                iterativas, adaptação a mudanças e colaboração eficiente entre equipes.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-5 mb-4">
-                        <div class="card-habilidades">
-                            <h3>Trabalho em Equipe</h3>
-                            <p>
-                                Habilidade em comunicação e colaboração para desenvolver projetos em equipe, garantindo
-                                eficiência e qualidade no desenvolvimento de software.
-                            </p>
-                        </div>
-                    </div>
+                <h2 class="section-title text-center">Tecnologias e Stack</h2>
+                <p class="section-subtitle text-center">Ferramentas que utilizo no dia a dia para entregar resultados consistentes.</p>
+                <div class="tech-grid">
+                    <div class="tech-card"><i class="bi bi-braces"></i><span>JavaScript</span></div>
+                    <div class="tech-card"><i class="bi bi-bootstrap"></i><span>Bootstrap</span></div>
+                    <div class="tech-card"><i class="bi bi-filetype-js"></i><span>React</span></div>
+                    <div class="tech-card"><i class="bi bi-node-plus"></i><span>Node.js</span></div>
+                    <div class="tech-card"><i class="bi bi-database"></i><span>MongoDB</span></div>
+                    <div class="tech-card"><i class="bi bi-git"></i><span>Git & GitHub</span></div>
+                    <div class="tech-card"><i class="bi bi-filetype-py"></i><span>Python</span></div>
+                    <div class="tech-card"><i class="bi bi-phone"></i><span>Flutter/React Native</span></div>
                 </div>
             </div>
         </section>
 
         <section class="formacao" id="formacao">
-            <h1 class="mb-4">Minha Formação</h1>
+            <h2 class="mb-4 section-title text-center">Formação Acadêmica</h2>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 mb-4">
                         <div class="card-formacao">
                             <h3>Ensino Médio</h3>
-                            <p>
-                                Concluí o Ensino Médio na Escola Monteiro Lobato em 2022, onde desenvolvi habilidades
-                                acadêmicas e pessoais, além de participar de projetos que me ajudaram a desenvolver
-                                habilidades práticas e teóricas.
-                            </p>
+                            <p>Ensino Médio concluído em 2022 na Escola Monteiro Lobato.</p>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="card-formacao">
                             <h3>Ciência da Computação</h3>
-                            <p>
-                                Atualmente, sou estudante de Ciência da Computação no Instituto Mauá de Tecnologia, onde
-                                aprofundo meus conhecimentos em programação, algoritmos, estruturas de dados e
-                                desenvolvimento de software.
-                            </p>
+                            <p>Graduando em Ciência da Computação no Instituto Mauá de Tecnologia, com foco em estruturas de dados, algoritmos e engenharia de software.</p>
                         </div>
                     </div>
                 </div>
@@ -178,7 +136,7 @@
         </section>
 
         <section class="certificados" id="certificados">
-            <h1 class="mb-4">Certificados</h1>
+            <h2 class="mb-4 section-title text-center">Certificados</h2>
             <div class="container">
                 <div id="carouselCertificados" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -201,71 +159,44 @@
             </div>
         </section>
 
-        <section class="projetos" id="projetos">
-            <div class="overlay"></div>
-            <div class="content">
-                <h1 class="mb-4">Meus Projetos</h1>
-                <p>
-                    Descubra uma seleção dos meus projetos acadêmicos, que demonstram minha dedicação à pesquisa,
-                    inovação e excelência no desenvolvimento de soluções criativas. Cada projeto reflete uma etapa
-                    importante da minha jornada de aprendizado e a aplicação prática dos conhecimentos adquiridos.
-                </p>
-                <a href="/html/projetos.html" class="btn">Ver Projetos</a>
+        <section class="projects-cta" id="projetos">
+            <div class="container text-center">
+                <h2 class="section-title">Projetos em Destaque</h2>
+                <p class="section-subtitle">Explore aplicações reais que desenvolvi aplicando boas práticas, testes e otimizações de performance.</p>
+                <a href="/html/projetos.html" class="btn btn-primary btn-lg">Ver portfólio completo</a>
             </div>
         </section>
 
         <section class="contatos" id="area-contatos">
             <div class="container">
-                <h1 class="text-center mb-4">Contatos</h1>
-                <div class="contato-container row">
-                    <div class="informacoes col-lg-6 col-md-12 mb-4">
-                        <h1 class="mb-4">Conecte-se comigo e veja meus projetos</h1>
-                        <p>
-                            Entre no meu LinkedIn para fortalecer conexões e trocar experiências profissionais. No meu
-                            GitHub, acompanhe meus projetos e veja como transformo ideias em soluções práticas.
-                        </p>
-                        <div class="social-icons mb-4">
-                            <a href="https://github.com/LucasS059" target="_blank" class="social-icon">
-                                <img src="/assets/icons/github.svg" alt="GitHub" />
-                            </a>
-                            <a href="https://www.linkedin.com/in/lucas-silva-barboza-a2568b285/" target="_blank"
-                                class="social-icon">
-                                <img src="/assets/icons/linkedin.svg" alt="LinkedIn" />
-                            </a>
-                        </div>
-                        <div class="email-contatos">
-                            <h3>Entre em contato por e-mail:</h3>
-                            <ul>
-                                <li>
-                                    <a href="mailto:lucasbarboza299@gmail.com">
-                                        <img src="/assets/icons/gmail.svg" alt="E-mail" />
-                                        lucasbarboza299@gmail.com
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="mailto:dev.lucas.silva59@gmail.com">
-                                        <img src="/assets/icons/gmail.svg" alt="E-mail" />
-                                        dev.lucas.silva59@gmail.com
-                                    </a>
-                                </li>
-                            </ul>
+                <h2 class="text-center mb-4">Contato</h2>
+                <div class="row g-4 contact-cards">
+                    <div class="col-md-4">
+                        <div class="contact-card">
+                            <div class="icon"><i class="bi bi-envelope-fill"></i></div>
+                            <h3>Email</h3>
+                            <p>Prefere conversa direta? Envie um email.</p>
+                            <div class="d-grid gap-2">
+                                <a href="mailto:dev.lucas.silva59@gmail.com" class="btn btn-primary">Abrir e-mail</a>
+                                <button class="btn btn-outline-primary" id="copyEmail" data-email="dev.lucas.silva59@gmail.com">Copiar email</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="formulario col-lg-6 col-md-12">
-                        <h2>Ou envie um email diretamente</h2>
-                        <form id="formContato" action="/formContato" method="POST">
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome"
-                                required>
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Seu email"
-                                required>
-                            <label for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" class="form-control" rows="4"
-                                placeholder="Sua mensagem" required></textarea>
-                            <div id="mensagem-feedback" class="alert" style="margin-top: 5px;"></div>
-                            <button type="submit" class="btn-contact mt-3">Enviar</button>
-                        </form>
+                    <div class="col-md-4">
+                        <div class="contact-card">
+                            <div class="icon"><i class="bi bi-linkedin"></i></div>
+                            <h3>LinkedIn</h3>
+                            <p>Conecte-se e acompanhe atualizações profissionais.</p>
+                            <a href="https://www.linkedin.com/in/lucas-silva-barboza-a2568b285/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Meu LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-card">
+                            <div class="icon"><i class="bi bi-github"></i></div>
+                            <h3>GitHub</h3>
+                            <p>Veja meus repositórios e contribuições.</p>
+                            <a href="https://github.com/LucasS059" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ir para o GitHub</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -282,6 +213,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="/js/index.js"></script>
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></button>
     
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -291,12 +223,12 @@
       "name": "Lucas Silva Barboza",
       "url": "https://portfolio-yg0y.onrender.com/",
       "image": "https://portfolio-yg0y.onrender.com/assets/Images/Lucas.jpg",
-      "jobTitle": "Desenvolvedor Fullstack",
+    "jobTitle": "Estagiário de Desenvolvimento",
       "worksFor": {
         "@type": "EducationalOrganization",
         "name": "Instituto Mauá de Tecnologia"
       },
-      "description": "Estudante de Ciência da Computação e desenvolvedor fullstack especializado em React, Node.js, Python, Flutter e desenvolvimento web moderno.",
+    "description": "Estudante de Ciência da Computação e estagiário de desenvolvimento, com interesse em web e mobile.",
       "knowsAbout": ["JavaScript", "React", "Node.js", "Python", "Flutter", "MongoDB", "MySQL", "Git", "HTML", "CSS", "Bootstrap"],
       "email": "mailto:lucasbarboza299@gmail.com",
       "sameAs": [

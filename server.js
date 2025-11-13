@@ -5,12 +5,17 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const sharp = require('sharp');
 const axios = require('axios');
+const fs = require('fs');
+const fsp = require('fs/promises');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
 const { body, validationResult } = require('express-validator');
 
 const app = express();
+
+// Necessário quando está atrás de proxy (Render/Heroku) para detectar HTTPS
+app.set('trust proxy', 1);
 
 // Segurança: Helmet para headers HTTP seguros
 app.use(helmet({
@@ -45,7 +50,15 @@ const formLimiter = rateLimit({
 app.use(mongoSanitize());
 
 // Middleware para servir arquivos estáticos
-app.use(express.static('public'));
+app.use(express.static('public', {
+    setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.html')) {
+            res.setHeader('Cache-Control', 'no-cache');
+        } else if (/(?:\.css|\.js|\.png|\.jpg|\.jpeg|\.svg|\.ico|\.webp|\.gif|\.woff2?)$/i.test(filePath)) {
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        }
+    }
+}));
 
 // Middleware para parsing de JSON e formulários
 app.use(express.json({ limit: "50mb" }));
@@ -79,9 +92,54 @@ app.use((req, res, next) => {
 });
 
 // Rotas explícitas para sitemap.xml e robots.txt com Content-Type adequado
-app.get('/sitemap.xml', (req, res) => {
-    res.type('application/xml');
-    res.sendFile(path.resolve(__dirname, 'public', 'sitemap.xml'));
+app.get('/sitemap.xml', async (req, res) => {
+    try {
+        const proto = (req.headers['x-forwarded-proto'] || req.protocol || 'https').split(',')[0];
+        const host = req.headers.host;
+        const baseUrl = `${proto}://${host}`;
+
+        const htmlDir = path.resolve(__dirname, 'public/html');
+        const entries = await fsp.readdir(htmlDir, { withFileTypes: true });
+
+        const pages = [];
+        // index.html -> '/'
+        pages.push({ url: '/', file: path.join(htmlDir, 'index.html'), changefreq: 'weekly', priority: '1.0' });
+
+        for (const ent of entries) {
+            if (!ent.isFile()) continue;
+            if (!ent.name.endsWith('.html')) continue;
+            if (ent.name === 'index.html') continue;
+            const url = `/html/${ent.name}`;
+            let changefreq = 'monthly';
+            let priority = '0.6';
+            if (ent.name === 'projetos.html') priority = '0.8';
+            if (ent.name.startsWith('add_')) priority = '0.4';
+            pages.push({ url, file: path.join(htmlDir, ent.name), changefreq, priority });
+        }
+
+        const items = await Promise.all(pages.map(async (p) => {
+            try {
+                const stat = await fsp.stat(p.file);
+                const lastmod = stat.mtime.toISOString();
+                return `  <url>\n    <loc>${baseUrl}${p.url}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${p.changefreq}</changefreq>\n    <priority>${p.priority}</priority>\n  </url>`;
+            } catch (e) {
+                return `  <url>\n    <loc>${baseUrl}${p.url}</loc>\n    <changefreq>${p.changefreq}</changefreq>\n    <priority>${p.priority}</priority>\n  </url>`;
+            }
+        }));
+
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${items.join('\n')}\n</urlset>\n`;
+
+        res.set('Cache-Control', 'public, max-age=3600');
+        res.type('application/xml').send(xml);
+    } catch (err) {
+        console.error('Erro ao gerar sitemap:', err);
+        // Fallback: servir arquivo estático se existir
+        const staticPath = path.resolve(__dirname, 'public', 'sitemap.xml');
+        if (fs.existsSync(staticPath)) {
+            return res.type('application/xml').sendFile(staticPath);
+        }
+        res.status(500).send('');
+    }
 });
 
 app.get('/robots.txt', (req, res) => {
