@@ -78,6 +78,17 @@ app.use((req, res, next) => {
     next();
 });
 
+// Rotas explícitas para sitemap.xml e robots.txt com Content-Type adequado
+app.get('/sitemap.xml', (req, res) => {
+    res.type('application/xml');
+    res.sendFile(path.resolve(__dirname, 'public', 'sitemap.xml'));
+});
+
+app.get('/robots.txt', (req, res) => {
+    res.type('text/plain');
+    res.sendFile(path.resolve(__dirname, 'public', 'robots.txt'));
+});
+
 // Conexão com o MongoDB
 const uri = process.env.MONGODB_URI;
 mongoose.connect(uri)
