@@ -5,8 +5,44 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const sharp = require('sharp');
 const axios = require('axios');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+const mongoSanitize = require('express-mongo-sanitize');
+const { body, validationResult } = require('express-validator');
 
 const app = express();
+
+// Segurança: Helmet para headers HTTP seguros
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net", "https://fonts.googleapis.com"],
+            scriptSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
+            imgSrc: ["'self'", "data:", "https:"],
+            fontSrc: ["'self'", "https://cdn.jsdelivr.net", "https://fonts.gstatic.com"],
+            connectSrc: ["'self'", "https://portfolio-yg0y.onrender.com"]
+        }
+    }
+}));
+
+// Segurança: Rate limiting para prevenir ataques de força bruta
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutos
+    max: 100, // limite de 100 requisições por IP
+    message: 'Muitas requisições deste IP, tente novamente mais tarde.'
+});
+app.use(limiter);
+
+// Rate limiting específico para formulários
+const formLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hora
+    max: 5, // limite de 5 envios por hora
+    message: 'Muitos envios de formulário, tente novamente mais tarde.'
+});
+
+// Segurança: Sanitização de dados MongoDB para prevenir NoSQL injection
+app.use(mongoSanitize());
 
 // Middleware para servir arquivos estáticos
 app.use(express.static('public'));
@@ -15,10 +51,25 @@ app.use(express.static('public'));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
-// Middleware para CORS
+// Middleware para CORS - Configuração mais segura
+const allowedOrigins = [
+    'http://127.0.0.1:5500',
+    'http://localhost:5500',
+    'http://localhost:3002',
+    'https://portfolio-yg0y.onrender.com'
+];
+
 app.use(cors({
-    origin: ['http://127.0.0.1:5500', 'http://localhost:5500'],
+    origin: function (origin, callback) {
+        // Permite requisições sem origin (como Postman) em desenvolvimento
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true
 }));
 
 // Middleware para logs
@@ -162,27 +213,53 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public/html/index.html'));
 });
 
-app.post('/formContato', async (req, res) => {
-    const { nome, email, mensagem } = req.body;
+// Rota de contato com validação e rate limiting
+app.post('/formContato',
+    formLimiter,
+    [
+        body('nome')
+            .trim()
+            .isLength({ min: 2, max: 100 })
+            .withMessage('Nome deve ter entre 2 e 100 caracteres')
+            .matches(/^[A-Za-zÀ-ÿ\s]+$/)
+            .withMessage('Nome deve conter apenas letras'),
+        body('email')
+            .trim()
+            .isEmail()
+            .normalizeEmail()
+            .withMessage('Email inválido'),
+        body('mensagem')
+            .trim()
+            .isLength({ min: 10, max: 1000 })
+            .withMessage('Mensagem deve ter entre 10 e 1000 caracteres')
+    ],
+    async (req, res) => {
+        // Validação dos dados
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ 
+                error: 'Dados inválidos', 
+                details: errors.array() 
+            });
+        }
 
-    if (!nome || !email || !mensagem) {
-        return res.status(400).json({ error: 'Formulário incompleto' });
+        const { nome, email, mensagem } = req.body;
+
+        try {
+            const response = await axios.post(process.env.FORMSPREE_URL, {
+                nome,
+                email,
+                mensagem
+            });
+
+            console.log("Resposta do Formspree:", response.data);
+            res.status(200).json({ message: 'Formulário enviado com sucesso!' });
+        } catch (error) {
+            console.error("Erro ao enviar o formulário:", error.response ? error.response.data : error.message);
+            res.status(500).json({ error: 'Erro ao enviar o formulário' });
+        }
     }
-
-    try {
-        const response = await axios.post(process.env.FORMSPREE_URL, {
-            nome,
-            email,
-            mensagem
-        });
-
-        console.log("Resposta do Formspree:", response.data);
-        res.status(200).json({ message: 'Formulário enviado com sucesso!' });
-    } catch (error) {
-        console.error("Erro ao enviar o formulário:", error.response ? error.response.data : error.message);
-        res.status(500).json({ error: 'Erro ao enviar o formulário' });
-    }
-});
+);
 
 // Configuração do servidor
 const PORT = process.env.PORT || 3002;

@@ -1,0 +1,15 @@
+# robots.txt para Portfolio - Lucas Silva Barboza
+# Permite que todos os motores de busca indexem o site
+
+User-agent: *
+Allow: /
+
+# Páginas importantes para o sitemap
+Sitemap: https://portfolio-yg0y.onrender.com/sitemap.xml
+
+# Bloquear acesso a arquivos sensíveis (se houver)
+Disallow: /api/
+Disallow: /*.json$
+
+# Otimizar crawl rate
+Crawl-delay: 1

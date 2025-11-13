@@ -32,18 +32,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+  // Função para sanitizar entrada e prevenir XSS
+  function sanitizeInput(input) {
+    const div = document.createElement('div');
+    div.textContent = input;
+    return div.innerHTML;
+  }
+
+  // Função para validar email
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  // Função para validar nome (apenas letras e espaços)
+  function isValidName(name) {
+    const nameRegex = /^[A-Za-zÀ-ÿ\s]{2,100}$/;
+    return nameRegex.test(name);
+  }
+
   document.getElementById('formContato').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const mensagem = document.getElementById('mensagem').value;
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
 
     const errorMessages = document.querySelectorAll('.error-message');
     errorMessages.forEach(msg => msg.remove());
 
     let hasError = false;
 
+    // Validação do nome
     if (!nome) {
       const nomeField = document.getElementById('nome');
       const errorMessage = document.createElement('div');
@@ -51,8 +71,16 @@ document.addEventListener("DOMContentLoaded", function () {
       errorMessage.textContent = 'O nome é obrigatório!';
       nomeField.parentNode.appendChild(errorMessage);
       hasError = true;
+    } else if (!isValidName(nome)) {
+      const nomeField = document.getElementById('nome');
+      const errorMessage = document.createElement('div');
+      errorMessage.classList.add('error-message');
+      errorMessage.textContent = 'Nome deve conter apenas letras (2-100 caracteres)';
+      nomeField.parentNode.appendChild(errorMessage);
+      hasError = true;
     }
 
+    // Validação do email
     if (!email) {
       const emailField = document.getElementById('email');
       const errorMessage = document.createElement('div');
@@ -60,13 +88,35 @@ document.addEventListener("DOMContentLoaded", function () {
       errorMessage.textContent = 'O e-mail é obrigatório!';
       emailField.parentNode.appendChild(errorMessage);
       hasError = true;
+    } else if (!isValidEmail(email)) {
+      const emailField = document.getElementById('email');
+      const errorMessage = document.createElement('div');
+      errorMessage.classList.add('error-message');
+      errorMessage.textContent = 'Por favor, insira um e-mail válido!';
+      emailField.parentNode.appendChild(errorMessage);
+      hasError = true;
     }
 
+    // Validação da mensagem
     if (!mensagem) {
       const mensagemField = document.getElementById('mensagem');
       const errorMessage = document.createElement('div');
       errorMessage.classList.add('error-message');
       errorMessage.textContent = 'A mensagem é obrigatória!';
+      mensagemField.parentNode.appendChild(errorMessage);
+      hasError = true;
+    } else if (mensagem.length < 10) {
+      const mensagemField = document.getElementById('mensagem');
+      const errorMessage = document.createElement('div');
+      errorMessage.classList.add('error-message');
+      errorMessage.textContent = 'A mensagem deve ter pelo menos 10 caracteres!';
+      mensagemField.parentNode.appendChild(errorMessage);
+      hasError = true;
+    } else if (mensagem.length > 1000) {
+      const mensagemField = document.getElementById('mensagem');
+      const errorMessage = document.createElement('div');
+      errorMessage.classList.add('error-message');
+      errorMessage.textContent = 'A mensagem não pode exceder 1000 caracteres!';
       mensagemField.parentNode.appendChild(errorMessage);
       hasError = true;
     }
@@ -75,14 +125,17 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Sanitizar dados antes de enviar
+    const dadosSanitizados = {
+      nome: sanitizeInput(nome),
+      email: sanitizeInput(email),
+      mensagem: sanitizeInput(mensagem)
+    };
+
     fetch('/formContato', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        nome: nome,
-        email: email,
-        mensagem: mensagem
-      }),
+      body: JSON.stringify(dadosSanitizados),
     })
       .then(response => response.json())
       .then(data => {
