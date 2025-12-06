@@ -4,13 +4,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const sharp = require('sharp');
-const axios = require('axios');
 const fs = require('fs');
 const fsp = require('fs/promises');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
-const { body, validationResult } = require('express-validator');
 
 const app = express();
 
@@ -26,7 +24,7 @@ app.use(helmet({
             scriptSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
             imgSrc: ["'self'", "data:", "https:"],
             fontSrc: ["'self'", "https://cdn.jsdelivr.net", "https://fonts.gstatic.com"],
-            connectSrc: ["'self'", "https://portfolio-yg0y.onrender.com"]
+            connectSrc: ["'self'", "https://lucasbarboza.dev"]
         }
     }
 }));
@@ -39,12 +37,6 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-// Rate limiting específico para formulários
-const formLimiter = rateLimit({
-    windowMs: 60 * 60 * 1000, // 1 hora
-    max: 5, // limite de 5 envios por hora
-    message: 'Muitos envios de formulário, tente novamente mais tarde.'
-});
 
 // Segurança: Sanitização de dados MongoDB para prevenir NoSQL injection
 app.use(mongoSanitize());
@@ -69,7 +61,7 @@ const allowedOrigins = [
     'http://127.0.0.1:5500',
     'http://localhost:5500',
     'http://localhost:3002',
-    'https://portfolio-yg0y.onrender.com'
+    'https://lucasbarboza.dev'
 ];
 
 app.use(cors({
@@ -182,17 +174,6 @@ const certificateSchema = new mongoose.Schema({
 });
 const Certificate = mongoose.model("Certificate", certificateSchema);
 
-// /* Rota para obter os certificados */
-// app.get("/Portfolio/certificates", async (req, res) => {
-//     try {
-//         const certificates = await Certificate.find();
-//         res.json(certificates);
-//     } catch (err) {
-//         console.error("Erro ao buscar certificados:", err);
-//         res.status(500).json({ error: "Erro ao buscar certificados" });
-//     }
-// });
-
 app.get("/Portfolio/certificates", async (req, res) => {
     try {
         console.log("Buscando certificados...");
@@ -277,58 +258,33 @@ app.post("/Portfolio/projects", async (req, res) => {
     }
 });
 
-/* Rota para servir o index.html como fallback */
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public/html/index.html'));
+/* Rota para servir o index.html da raiz - DEVE VIR ANTES DO CATCH-ALL */
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
-// Rota de contato com validação e rate limiting
-app.post('/formContato',
-    formLimiter,
-    [
-        body('nome')
-            .trim()
-            .isLength({ min: 2, max: 100 })
-            .withMessage('Nome deve ter entre 2 e 100 caracteres')
-            .matches(/^[A-Za-zÀ-ÿ\s]+$/)
-            .withMessage('Nome deve conter apenas letras'),
-        body('email')
-            .trim()
-            .isEmail()
-            .normalizeEmail()
-            .withMessage('Email inválido'),
-        body('mensagem')
-            .trim()
-            .isLength({ min: 10, max: 1000 })
-            .withMessage('Mensagem deve ter entre 10 e 1000 caracteres')
-    ],
-    async (req, res) => {
-        // Validação dos dados
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ 
-                error: 'Dados inválidos', 
-                details: errors.array() 
-            });
-        }
-
-        const { nome, email, mensagem } = req.body;
-
-        try {
-            const response = await axios.post(process.env.FORMSPREE_URL, {
-                nome,
-                email,
-                mensagem
-            });
-
-            console.log("Resposta do Formspree:", response.data);
-            res.status(200).json({ message: 'Formulário enviado com sucesso!' });
-        } catch (error) {
-            console.error("Erro ao enviar o formulário:", error.response ? error.response.data : error.message);
-            res.status(500).json({ error: 'Erro ao enviar o formulário' });
-        }
+/* Rota catch-all para outras páginas HTML - só para rotas que não são arquivos estáticos */
+app.get('*', (req, res, next) => {
+    // Ignorar requisições de arquivos estáticos (CSS, JS, imagens, etc)
+    if (/\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/i.test(req.path)) {
+        return next(); // Deixa o express.static lidar com isso
     }
-);
+    
+    const publicPath = path.resolve(__dirname, 'public', req.path);
+    const htmlPath = path.resolve(__dirname, 'public/html', req.path);
+    
+    // Check if file exists in public or public/html
+    if (fs.existsSync(publicPath) && fs.statSync(publicPath).isFile()) {
+        return res.sendFile(publicPath);
+    }
+    if (fs.existsSync(htmlPath) && fs.statSync(htmlPath).isFile()) {
+        return res.sendFile(htmlPath);
+    }
+    
+    // Fallback to root index.html
+    res.sendFile(path.resolve(__dirname, 'index.html'));
+});
+
 
 // Configuração do servidor
 const PORT = process.env.PORT || 3002;

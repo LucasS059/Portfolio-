@@ -44,8 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // fetch("http://localhost:3002/Portfolio/certificates")
-  fetch("https://portfolio-yg0y.onrender.com/Portfolio/certificates")
+  fetch("/Portfolio/certificates")
     .then((response) => response.json())
     .then((certificates) => {
       const carouselInner = document.querySelector(".carousel-inner");

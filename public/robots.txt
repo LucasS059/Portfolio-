@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Páginas importantes para o sitemap
-Sitemap: https://portfolio-yg0y.onrender.com/sitemap.xml
+Sitemap: https://lucasbarboza.dev/sitemap.xml
 
 # Bloquear acesso a arquivos sensíveis (se houver)
 Disallow: /api/

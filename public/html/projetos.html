@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,17 +7,17 @@
     <!-- SEO Meta Tags -->
     <title>Projetos | Lucas Silva Barboza - Desenvolvedor Fullstack</title>
     <meta name="description" content="Explore os projetos de Lucas Silva Barboza: aplicações web, mobile e sistemas completos desenvolvidos com React, Node.js, Python, Flutter e mais." />
-    <meta name="keywords" content="projetos Lucas Silva, portfolio projetos, desenvolvimento web, aplicativos mobile, React projects, Node.js projects" />
+    <meta name="keywords" content="projetos Lucas Silva Barboza, portfolio projetos, desenvolvimento web, aplicativos mobile, React projects, Node.js projects" />
     <meta name="author" content="Lucas Silva Barboza" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://portfolio-yg0y.onrender.com/html/projetos.html" />
+    <link rel="canonical" href="https://lucasbarboza.dev/html/projetos.html" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://portfolio-yg0y.onrender.com/html/projetos.html" />
+    <meta property="og:url" content="https://lucasbarboza.dev/html/projetos.html" />
     <meta property="og:title" content="Projetos - Lucas Silva Barboza" />
     <meta property="og:description" content="Explore meus projetos de desenvolvimento fullstack: web apps, aplicativos mobile e sistemas completos." />
-    <meta property="og:image" content="https://portfolio-yg0y.onrender.com/assets/Images/Lucas.jpg" />
+    <meta property="og:image" content="https://lucasbarboza.dev/assets/Images/Lucas.jpg" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -26,134 +25,151 @@
     <meta name="twitter:description" content="Portfólio de projetos de desenvolvimento fullstack." />
     
     <link rel="icon" href="/assets/Images/logo-nova.jpeg" type="image/png" />
-    <meta name="theme-color" content="#007BFF" />
+    <meta name="theme-color" content="#2563eb" />
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/projetos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/projetos.css?v=4.0">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top custom-menu">
-            <div class="container-fluid justify-content-center">
-                <a class="navbar-brand" href="projetos.html">
-                    <img src="/assets/Images/logo-nova.jpeg" width="200" alt="Logo Lucas Silva" />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/index.html"><span style="padding-right: 10px; color: white"><i class="bi bi-house-fill"></i></span>Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/html/index.html#habilidades">Habilidades</a>
-                        </li>
-        
-                        <li class="nav-item">
-                            <a class="nav-link" href="/html/index.html#certificados">Certificados</a>
-                        </li>
-        
-                        <li class="nav-item">
-                            <a class="nav-link" href="/html/index.html#area-contatos">Conecte-se Comigo</a>
-                        </li>
-        
-                        <li class="nav-item">
-                            <a class="nav-link" href="/html/add_projetos.html" id="add-projects-link">Adicionar
-                                Projetos</a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Navigation -->
+    <nav class="projects-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-text">Lucas Silva</span>
+                <span class="logo-badge">Portfolio</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/#about">Sobre</a></li>
+                <li><a href="/#skills">Skills</a></li>
+                <li><a href="/#contact">Contato</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="projects-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">Portfolio</span>
+                <h1 class="hero-title">Meus Projetos</h1>
+                <p class="hero-description">Explore minha jornada de desenvolvimento através de projetos reais. Cada projeto representa aprendizado, desafios superados e soluções inovadoras.</p>
             </div>
-        </nav>
-    </header>
+        </div>
+    </section>
 
-    <main class="container my-5">
-        <section class="project-intro text-center mb-4">
-            <h1 class="display-4">Meus Projetos</h1>
-            <p class="lead">Clique em um projeto para ver detalhes, imagens e links.</p>
-        </section>
-
-        <section>
-            <div id="projectsGrid" class="row g-4"></div>
-        </section>
-    </main>
-
-    <!-- Modal de Detalhes do Projeto -->
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModalTitle"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-7 mb-3 mb-lg-0">
-                            <div id="projectModalCarousel" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators" id="projectModalIndicators"></div>
-                                <div class="carousel-inner" id="projectModalPhotos"></div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#projectModalCarousel" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Anterior</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#projectModalCarousel" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Próximo</span>
-                                </button>
-                            </div>
-                            <div id="projectModalThumbs" class="modal-thumbs mt-3" aria-label="Miniaturas do projeto"></div>
-                        </div>
-                        <div class="col-lg-5">
-                            <h6>Sobre o projeto</h6>
-                            <div id="projectModalDescription" class="project-description"></div>
-                        </div>
+    <!-- Projects Grid -->
+    <main class="projects-main">
+        <div class="container">
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects loaded dynamically -->
+                <div class="project-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-text"></div>
+                        <div class="skeleton-text short"></div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <div class="project-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-text"></div>
+                        <div class="skeleton-text short"></div>
+                    </div>
+                </div>
+                <div class="project-skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-text"></div>
+                        <div class="skeleton-text short"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose" aria-label="Fechar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-image-section">
+                    <div class="modal-carousel" id="modalCarousel">
+                        <div class="carousel-main" id="carouselMain"></div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn prev" id="carouselPrev" aria-label="Anterior">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                            <button class="carousel-btn next" id="carouselNext" aria-label="Próximo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="carousel-indicators" id="carouselIndicators"></div>
+                    </div>
+                    <div class="modal-thumbs" id="modalThumbs"></div>
+                </div>
+                <div class="modal-info-section">
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-description" id="modalDescription"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container text-center py-3">
-            <p>&copy; 2025 Lucas Silva Barboza | Todos os direitos reservados</p>
+    <!-- Footer -->
+    <footer class="projects-footer">
+        <div class="container">
+            <p>&copy; 2025 Lucas Silva Barboza. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="/js/projetos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Início",
-                    "item": "https://portfolio-yg0y.onrender.com/"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Projetos",
-                    "item": "https://portfolio-yg0y.onrender.com/html/projetos.html"
-                }
-            ]
-        }
-        </script>
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Início",
+                "item": "https://lucasbarboza.dev/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Projetos",
+                "item": "https://lucasbarboza.dev/html/projetos.html"
+            }
+        ]
+    }
+    </script>
 </body>
-
 </html>

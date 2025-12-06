@@ -164,7 +164,7 @@
                     photos: base64Photos
                 };
 
-                const response = await fetch('http://localhost:3002/Portfolio/projects', {
+                const response = await fetch('/Portfolio/projects', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -201,7 +201,7 @@
             };
 
             try {
-                const response = await fetch('http://localhost:3002/Portfolio/certificates', {
+                const response = await fetch('/Portfolio/certificates', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

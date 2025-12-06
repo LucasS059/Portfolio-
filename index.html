@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Lucas Silva Barboza — Estudante de Ciência da Computação</title>
+    <meta name="description" content="Lucas Silva Barboza — estudante de Ciência da Computação e estagiário de desenvolvimento. Portfolio com projetos acadêmicos e pessoais em web e mobile.">
+    <meta name="keywords" content="Lucas Silva Barboza, desenvolvedor fullstack, programador, Ciência da Computação, React, Node.js, Python, Flutter, portfolio desenvolvedor, desenvolvimento web, IMT Mauá">
+    <meta name="author" content="Lucas Silva Barboza">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lucasbarboza.dev/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lucasbarboza.dev/">
+    <meta property="og:title" content="Lucas Silva Barboza — Portfólio">
+    <meta property="og:description" content="Estudante de Ciência da Computação e estagiário. Veja meus projetos acadêmicos e pessoais.">
+    <meta property="og:image" content="https://lucasbarboza.dev/assets/Images/Lucas.jpg">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lucas Silva Barboza — Portfólio">
+    <meta name="twitter:description" content="Estudante de Ciência da Computação e estagiário. Projetos acadêmicos e pessoais.">
+    <meta name="twitter:image" content="https://lucasbarboza.dev/assets/Images/Lucas.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/Images/logo-nova.jpeg" type="image/png">
+    <meta name="theme-color" content="#1e40af">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/main.css?v=4.0">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">LS</a>
+            <ul class="nav-links">
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#certificates">Certificados</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">Estudante & Estagiário</div>
+                <h1 class="hero-title">
+                    Olá, sou <span class="highlight">Lucas Barboza</span>
+                    <br>Desenvolvedor Fullstack
+                </h1>
+                <p class="hero-description">
+                    Estudante de Ciência da Computação com 3 anos de experiência prática em projetos fullstack. 
+                    Atualmente aplico e expando esse conhecimento como Estagiário de Desenvolvimento de Software na Wassamara, 
+                    focando em construir soluções que os usuários realmente gostem de usar.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary">Ver Projetos</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://www.linkedin.com/in/lucas-silva-barboza-a2568b285/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/LucasS059" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:dev.lucas.silva59@gmail.com" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="/assets/Images/Lucas.jpg" alt="Lucas Silva Barboza">
+                    <div class="image-accent"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg-elements">
+            <div class="bg-circle circle-1"></div>
+            <div class="bg-circle circle-2"></div>
+            <div class="bg-circle circle-3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Sobre Mim</span>
+                <h2 class="section-title">Um pouco da minha jornada</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Formação Acadêmica</h3>
+                    <p>Atualmente sou <strong>acadêmico graduando em Ciência da Computação</strong> no <strong>Instituto Mauá de Tecnologia</strong>, onde desenvolvo conhecimentos sólidos em estruturas de dados, algoritmos e engenharia de software.</p>
+                    <p>Completei meu <strong>Ensino Médio na Escola Monteiro Lobato</strong>, concluído em 2022, onde estabeleci as bases para minha jornada acadêmica e profissional.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">💼</div>
+                    <h3>Experiência Profissional</h3>
+                    <p>Possuo <strong>3 anos de experiência prática</strong> em projetos fullstack e atualmente atuo como <strong>Estagiário de Desenvolvimento de Software na Wassamara</strong>, onde aplico e expando continuamente meus conhecimentos técnicos.</p>
+                    <p>No ambiente corporativo, desenvolvo minhas habilidades com <strong>C#/.NET e PHP</strong>, enquanto em projetos pessoais trabalho com sistemas fullstack utilizando Node.js, MongoDB, HTML e CSS, além de projetos específicos com <strong>Flutter (mobile)</strong> e <strong>Python (APIs)</strong>.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Objetivos & Filosofia</h3>
+                    <p>Meu objetivo profissional é ir além do código: busco aplicar as melhores práticas de desenvolvimento para construir <strong>soluções que os usuários realmente gostem de usar</strong>, focando sempre em performance, usabilidade e qualidade.</p>
+                    <p>Aplico metodologias ágeis e melhores práticas da indústria para entregar projetos que agregam valor real e impactam positivamente a experiência dos usuários.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Tecnologias</span>
+                <h2 class="section-title">Stack e Ferramentas</h2>
+                <p class="section-subtitle">Tecnologias que utilizo para criar soluções digitais</p>
+            </div>
+            <div class="skills-showcase">
+                <div class="tech-card">
+                    <div class="tech-card-icon">💻</div>
+                    <h3 class="tech-card-title">Frontend & Mobile</h3>
+                    <div class="tech-card-tags">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">JavaScript (ES6+)</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                    </div>
+                </div>
+                <div class="tech-card featured">
+                    <div class="tech-card-icon">⚙️</div>
+                    <h3 class="tech-card-title">Backend</h3>
+                    <div class="tech-card-tags">
+                        <span class="tech-tag featured-tag">Node.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">C#/.NET</span>
+                        <span class="tech-tag">REST APIs</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🗃️</div>
+                    <h3 class="tech-card-title">Bancos de Dados</h3>
+                    <div class="tech-card-tags">
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🛠️</div>
+                    <h3 class="tech-card-title">Ferramentas & DevOps</h3>
+                    <div class="tech-card-tags">
+                        <span class="tech-tag">Git & GitHub</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Postman</span>
+                        <span class="tech-tag">DBeaver</span>
+                        <span class="tech-tag">Scrum</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎨</div>
+                    <h3 class="tech-card-title">Design (UI/UX)</h3>
+                    <div class="tech-card-tags">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Canvas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="certificates-section" id="certificates">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Conquistas</span>
+                <h2 class="section-title">Certificados</h2>
+                <p class="section-subtitle">Certificações e cursos que comprovam meu aprendizado contínuo</p>
+            </div>
+            <div class="certificates-container">
+                <div class="certificates-wrapper">
+                    <button class="cert-nav-btn prev" id="certPrev" aria-label="Anterior">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <div id="certificatesCarousel" class="certificates-carousel">
+                        <div class="certificates-loading">
+                            <p>Carregando certificados...</p>
+                        </div>
+                    </div>
+                    <button class="cert-nav-btn next" id="certNext" aria-label="Próximo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfólio</span>
+                <h2 class="section-title">Projetos em Destaque</h2>
+                <p class="section-subtitle">Alguns dos meus projetos desenvolvidos</p>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects loaded dynamically -->
+            </div>
+            <div class="projects-cta">
+                <a href="/html/projetos.html" class="btn-outline">Ver Todos os Projetos →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-content">
+                    <span class="section-tag">Contato</span>
+                    <h2 class="section-title">Vamos conversar?</h2>
+                    <p>Estou sempre aberto a discutir novos projetos, oportunidades ou apenas fazer networking!</p>
+                    <div class="contact-methods">
+                        <a href="mailto:dev.lucas.silva59@gmail.com" class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <strong>Email</strong>
+                                <span class="contact-email">dev.lucas.silva59@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucas-silva-barboza-a2568b285/" target="_blank" rel="noopener" class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <strong>LinkedIn</strong>
+                                <span>Conecte-se comigo</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/LucasS059" target="_blank" rel="noopener" class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <strong>GitHub</strong>
+                                <span>Veja meus repositórios</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Lucas Silva Barboza. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose" aria-label="Fechar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-image-section">
+                    <div class="modal-carousel" id="modalCarousel">
+                        <div class="carousel-main" id="carouselMain"></div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn prev" id="carouselPrev" aria-label="Anterior">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                            <button class="carousel-btn next" id="carouselNext" aria-label="Próximo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="carousel-indicators" id="carouselIndicators"></div>
+                    </div>
+                </div>
+                <div class="modal-info-section">
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-description" id="modalDescription"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script>
+        async function loadProjects() {
+            try {
+                const projectsGrid = document.getElementById('projectsGrid');
+                if (!projectsGrid) {
+                    console.warn('Projects grid not found');
+                    return;
+                }
+                
+                const response = await fetch('/Portfolio/projects');
+                if (!response.ok) throw new Error('Failed to load projects');
+                
+                const projects = await response.json();
+                
+                if (!projects || projects.length === 0) {
+                    projectsGrid.innerHTML = `
+                        <div class="project-card placeholder">
+                            <div class="project-image">
+                                <div class="placeholder-bg"></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Novos projetos em breve</h3>
+                                <p>Fique atento para novos projetos!</p>
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                const featuredProjects = projects.slice(0, 3);
+                window.homeProjects = featuredProjects;
+                
+                projectsGrid.innerHTML = featuredProjects.map((project, projectIndex) => {
+                    const coverImage = Array.isArray(project.photos) && project.photos.length > 0 
+                        ? project.photos[0] 
+                        : '/assets/Images/code.jpg';
+                    const projectDescription = project.description || 'Sem descrição';
+                    const shortDescription = projectDescription.length > 120 
+                        ? projectDescription.substring(0, 120) + '...' 
+                        : projectDescription;
+                    const projectTitle = project.title || 'Projeto';
+                    const sanitizedTitle = projectTitle.replace(/"/g, '&quot;');
+                    const sanitizedHtmlTitle = projectTitle.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    const sanitizedHtmlDesc = shortDescription.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    
+                    return `
+                        <div class="project-card" data-project-index="${projectIndex}">
+                            <div class="project-image">
+                                <img src="${coverImage}" alt="${sanitizedTitle}" loading="lazy" onerror="this.src='/assets/Images/code.jpg'">
+                                <div class="project-overlay"></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>${sanitizedHtmlTitle}</h3>
+                                <p>${sanitizedHtmlDesc}</p>
+                            </div>
+                            <div class="project-footer">
+                                <button class="btn-view-details" data-project-index="${projectIndex}">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                attachProjectModalHandlers();
+            } catch (error) {
+                console.error('Error loading projects:', error);
+                const projectsGrid = document.getElementById('projectsGrid');
+                if (projectsGrid) {
+                    projectsGrid.innerHTML = `
+                        <div class="project-card placeholder">
+                            <div class="project-info">
+                                <h3>Erro ao carregar projetos</h3>
+                                <p>Tente novamente mais tarde.</p>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        function attachProjectModalHandlers() {
+            const detailButtons = document.querySelectorAll('.btn-view-details');
+            detailButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    const projectIndex = parseInt(button.getAttribute('data-project-index'));
+                    if (!isNaN(projectIndex) && window.homeProjects) {
+                        openProjectModal(window.homeProjects[projectIndex]);
+                    }
+                });
+            });
+        }
+        
+        function openProjectModal(project) {
+            if (!project) return;
+            
+            const projectModal = document.getElementById('projectModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const carouselMain = document.getElementById('carouselMain');
+            const carouselIndicators = document.getElementById('carouselIndicators');
+            
+            if (!projectModal) return;
+            
+            if (modalTitle) {
+                modalTitle.textContent = project.title || 'Projeto';
+            }
+            
+            if (modalDescription) {
+                const projectDescription = project.description || 'Sem descrição disponível.';
+                modalDescription.innerHTML = projectDescription.split('\n')
+                    .map(line => line.trim() ? `<p>${line.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>` : '')
+                    .join('');
+            }
+            
+            const projectPhotos = Array.isArray(project.photos) && project.photos.length > 0
+                ? project.photos
+                : ['/assets/Images/code.jpg'];
+            
+            if (carouselMain) {
+                carouselMain.innerHTML = projectPhotos.map((imageSrc, imageIndex) => `
+                    <div class="carousel-slide ${imageIndex === 0 ? 'active' : ''}" data-slide="${imageIndex}">
+                        <img src="${imageSrc}" alt="Imagem ${imageIndex + 1}" loading="lazy" onerror="this.src='/assets/Images/code.jpg'">
+                    </div>
+                `).join('');
+            }
+            
+            if (carouselIndicators && projectPhotos.length > 1) {
+                carouselIndicators.innerHTML = projectPhotos.map((_, imageIndex) => `
+                    <button class="carousel-indicator ${imageIndex === 0 ? 'active' : ''}" data-slide="${imageIndex}" aria-label="Slide ${imageIndex + 1}"></button>
+                `).join('');
+                initCarousel(projectPhotos.length);
+                attachIndicatorHandlers();
+            } else if (carouselIndicators) {
+                carouselIndicators.innerHTML = '';
+            }
+            
+            projectModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            const prevButton = document.getElementById('carouselPrev');
+            const nextButton = document.getElementById('carouselNext');
+            if (prevButton) prevButton.style.display = projectPhotos.length > 1 ? 'flex' : 'none';
+            if (nextButton) nextButton.style.display = projectPhotos.length > 1 ? 'flex' : 'none';
+        }
+        
+        function closeProjectModal() {
+            const projectModal = document.getElementById('projectModal');
+            if (projectModal) {
+                projectModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        let currentSlideIndex = 0;
+        let totalSlidesCount = 0;
+        
+        function initCarousel(totalSlides) {
+            totalSlidesCount = totalSlides;
+            currentSlideIndex = 0;
+            
+            const previousButton = document.getElementById('carouselPrev');
+            const nextButton = document.getElementById('carouselNext');
+            
+            if (previousButton) {
+                previousButton.onclick = () => navigateCarouselSlide(-1);
+                previousButton.disabled = totalSlides <= 1;
+            }
+            
+            if (nextButton) {
+                nextButton.onclick = () => navigateCarouselSlide(1);
+                nextButton.disabled = totalSlides <= 1;
+            }
+            
+            updateCarouselDisplay();
+        }
+        
+        function navigateCarouselSlide(direction) {
+            currentSlideIndex += direction;
+            if (currentSlideIndex < 0) {
+                currentSlideIndex = totalSlidesCount - 1;
+            } else if (currentSlideIndex >= totalSlidesCount) {
+                currentSlideIndex = 0;
+            }
+            updateCarouselDisplay();
+        }
+        
+        function updateCarouselDisplay() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            slides.forEach((slide, slideIndex) => {
+                slide.classList.toggle('active', slideIndex === currentSlideIndex);
+            });
+            
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            indicators.forEach((indicator, indicatorIndex) => {
+                indicator.classList.toggle('active', indicatorIndex === currentSlideIndex);
+            });
+        }
+        
+        function attachIndicatorHandlers() {
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            indicators.forEach((indicator) => {
+                const existingHandler = indicator.getAttribute('data-handler-attached');
+                if (!existingHandler) {
+                    indicator.setAttribute('data-handler-attached', 'true');
+                    indicator.addEventListener('click', () => {
+                        const slideIndex = parseInt(indicator.getAttribute('data-slide'));
+                        if (!isNaN(slideIndex) && slideIndex !== currentSlideIndex) {
+                            currentSlideIndex = slideIndex;
+                            updateCarouselDisplay();
+                        }
+                    });
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const modalOverlay = document.getElementById('modalOverlay');
+            const modalCloseButton = document.getElementById('modalClose');
+            
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', closeProjectModal);
+            }
+            if (modalCloseButton) {
+                modalCloseButton.addEventListener('click', closeProjectModal);
+            }
+            
+            document.addEventListener('keydown', (keyboardEvent) => {
+                if (keyboardEvent.key === 'Escape') {
+                    const projectModal = document.getElementById('projectModal');
+                    if (projectModal && projectModal.classList.contains('active')) {
+                        closeProjectModal();
+                    }
+                }
+            });
+            
+            loadProjects();
+            loadCertificates();
+        });
+        
+        if (document.readyState !== 'loading') {
+            setTimeout(loadProjects, 100);
+            setTimeout(loadCertificates, 100);
+        }
+        
+        async function loadCertificates() {
+            try {
+                const certificatesContainer = document.getElementById('certificatesCarousel');
+                if (!certificatesContainer) {
+                    console.warn('Certificates container not found');
+                    return;
+                }
+                
+                const response = await fetch('/Portfolio/certificates');
+                if (!response.ok) throw new Error('Failed to load certificates');
+                
+                const certificates = await response.json();
+                
+                if (!certificates || certificates.length === 0) {
+                    certificatesContainer.innerHTML = `
+                        <div class="certificates-empty">
+                            <p>Nenhum certificado encontrado.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                certificatesContainer.innerHTML = certificates.map((certificate, index) => {
+                    const sanitizedTitle = (certificate.title || 'Certificado').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    const sanitizedDesc = (certificate.description || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    
+                    return `
+                        <div class="certificate-card ${index === 0 ? 'active' : ''}">
+                            <div class="certificate-content">
+                                <h3 class="certificate-title">${sanitizedTitle}</h3>
+                                ${sanitizedDesc ? `<p class="certificate-description">${sanitizedDesc}</p>` : ''}
+                                <div class="certificate-actions">
+                                    ${certificate.certificateUrl ? `<a href="${certificate.certificateUrl}" target="_blank" rel="noopener" class="btn-primary">Visualizar Certificado</a>` : ''}
+                                    ${certificate.authenticityUrl ? `<a href="${certificate.authenticityUrl}" target="_blank" rel="noopener" class="btn-secondary">Verificar Autenticidade</a>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                if (certificates.length > 1) {
+                    initCertificatesCarousel(certificates.length);
+                }
+            } catch (error) {
+                console.error('Error loading certificates:', error);
+                const certificatesContainer = document.getElementById('certificatesCarousel');
+                if (certificatesContainer) {
+                    certificatesContainer.innerHTML = `
+                        <div class="certificates-error">
+                            <p>Erro ao carregar certificados. Tente novamente mais tarde.</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        let currentCertificateIndex = 0;
+        let totalCertificates = 0;
+        
+        function initCertificatesCarousel(total) {
+            totalCertificates = total;
+            currentCertificateIndex = 0;
+            updateCertificatesDisplay();
+            
+            const prevBtn = document.getElementById('certPrev');
+            const nextBtn = document.getElementById('certNext');
+            
+            if (prevBtn) {
+                prevBtn.onclick = () => navigateCertificate(-1);
+                prevBtn.style.display = total > 1 ? 'flex' : 'none';
+            }
+            if (nextBtn) {
+                nextBtn.onclick = () => navigateCertificate(1);
+                nextBtn.style.display = total > 1 ? 'flex' : 'none';
+            }
+        }
+        
+        function navigateCertificate(direction) {
+            currentCertificateIndex += direction;
+            if (currentCertificateIndex < 0) {
+                currentCertificateIndex = totalCertificates - 1;
+            } else if (currentCertificateIndex >= totalCertificates) {
+                currentCertificateIndex = 0;
+            }
+            updateCertificatesDisplay();
+        }
+        
+        function updateCertificatesDisplay() {
+            const cards = document.querySelectorAll('.certificate-card');
+            cards.forEach((card, index) => {
+                card.classList.toggle('active', index === currentCertificateIndex);
+            });
+        }
+    </script>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lucas Silva Barboza",
+      "url": "https://lucasbarboza.dev/",
+      "image": "https://lucasbarboza.dev/assets/Images/Lucas.jpg",
+      "jobTitle": "Estagiário de Desenvolvimento",
+      "worksFor": {
+        "@type": "EducationalOrganization",
+        "name": "Instituto Mauá de Tecnologia"
+      },
+      "description": "Estudante de Ciência da Computação e estagiário de desenvolvimento, com interesse em web e mobile.",
+      "knowsAbout": ["JavaScript", "React", "Node.js", "Python", "Flutter", "MongoDB", "MySQL", "Git", "HTML", "CSS", "Bootstrap"],
+      "email": "mailto:dev.lucas.silva59@gmail.com",
+      "sameAs": [
+        "https://github.com/LucasS059",
+        "https://www.linkedin.com/in/lucas-silva-barboza-a2568b285/"
+      ]
+    }
+    </script>
+</body>
+</html>
