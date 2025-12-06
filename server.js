@@ -41,13 +41,56 @@ app.use(limiter);
 // Segurança: Sanitização de dados MongoDB para prevenir NoSQL injection
 app.use(mongoSanitize());
 
+// Middleware para cache busting automático usando ETag
+app.use((req, res, next) => {
+    // Para arquivos CSS e JS, adiciona ETag baseado no timestamp de modificação
+    if (req.path.match(/\.(css|js)$/i)) {
+        const filePath = path.join(__dirname, 'public', req.path);
+        if (fs.existsSync(filePath)) {
+            try {
+                const stats = fs.statSync(filePath);
+                const etag = `"${stats.mtime.getTime()}"`;
+                res.setHeader('ETag', etag);
+                
+                // Se o cliente tem a mesma versão, retorna 304 Not Modified
+                if (req.headers['if-none-match'] === etag) {
+                    return res.status(304).end();
+                }
+            } catch (error) {
+                // Ignora erro e continua
+            }
+        }
+    }
+    next();
+});
+
 // Middleware para servir arquivos estáticos
+const isProduction = process.env.NODE_ENV === 'production';
 app.use(express.static('public', {
     setHeaders: (res, filePath) => {
         if (filePath.endsWith('.html')) {
-            res.setHeader('Cache-Control', 'no-cache');
-        } else if (/(?:\.css|\.js|\.png|\.jpg|\.jpeg|\.svg|\.ico|\.webp|\.gif|\.woff2?)$/i.test(filePath)) {
-            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+            // HTML nunca deve ser cacheado
+            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+            res.setHeader('Pragma', 'no-cache');
+            res.setHeader('Expires', '0');
+        } else if (/(?:\.css|\.js)$/i.test(filePath)) {
+            // CSS e JS: em dev não cacheia, em prod cacheia com validação
+            if (isProduction) {
+                // Em produção: cache longo mas com validação (ETag)
+                res.setHeader('Cache-Control', 'public, max-age=31536000, must-revalidate');
+            } else {
+                // Em desenvolvimento: não cacheia para ver mudanças imediatamente
+                res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+                res.setHeader('Pragma', 'no-cache');
+                res.setHeader('Expires', '0');
+            }
+        } else if (/(?:\.png|\.jpg|\.jpeg|\.svg|\.ico|\.webp|\.gif|\.woff2?)$/i.test(filePath)) {
+            // Imagens e fontes: cache longo em produção
+            if (isProduction) {
+                res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+            } else {
+                res.setHeader('Cache-Control', 'public, max-age=3600');
+            }
         }
     }
 }));
@@ -94,13 +137,15 @@ app.get('/sitemap.xml', async (req, res) => {
         const entries = await fsp.readdir(htmlDir, { withFileTypes: true });
 
         const pages = [];
-        // index.html -> '/'
-        pages.push({ url: '/', file: path.join(htmlDir, 'index.html'), changefreq: 'weekly', priority: '1.0' });
+        // Root index.html -> '/'
+        const rootIndexPath = path.resolve(__dirname, 'index.html');
+        if (fs.existsSync(rootIndexPath)) {
+            pages.push({ url: '/', file: rootIndexPath, changefreq: 'weekly', priority: '1.0' });
+        }
 
         for (const ent of entries) {
             if (!ent.isFile()) continue;
             if (!ent.name.endsWith('.html')) continue;
-            if (ent.name === 'index.html') continue;
             const url = `/html/${ent.name}`;
             let changefreq = 'monthly';
             let priority = '0.6';

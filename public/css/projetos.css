@@ -66,84 +66,11 @@ body {
 /* ===================================
    Navigation
    =================================== */
+/* Navigation styles are inherited from main.css */
 
-.projects-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    box-shadow: var(--shadow-sm);
-    z-index: 1000;
-    padding: 1rem 0;
-}
-
-.nav-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-    color: var(--gray-900);
-    font-weight: 700;
-    font-size: 1.25rem;
-}
-
-.logo-text {
-    color: var(--gray-900);
-}
-
-.logo-badge {
-    background: linear-gradient(135deg, var(--blue-600), var(--blue-400));
-    color: var(--white);
-    padding: 0.25rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    align-items: center;
-}
-
-.nav-menu a {
-    color: var(--gray-700);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-    position: relative;
-}
-
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--blue-600);
-    transition: width 0.3s ease;
-}
-
-.nav-menu a:hover {
-    color: var(--blue-600);
-}
-
-.nav-menu a:hover::after {
-    width: 100%;
+/* Projects page specific adjustments */
+.main-nav {
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .nav-toggle {
@@ -193,6 +120,11 @@ body {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    color: var(--white);
+}
+
+.hero-content * {
+    color: inherit;
 }
 
 .hero-badge {
@@ -206,6 +138,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 1.5rem;
+    color: var(--white);
 }
 
 .hero-title {
@@ -213,10 +146,12 @@ body {
     font-weight: 800;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    color: var(--white);
 }
 
 .hero-description {
     font-size: 1.25rem;
+    color: var(--white);
     opacity: 0.95;
     line-height: 1.8;
 }
@@ -787,31 +722,7 @@ body {
         max-width: 100%;
     }
     
-    .nav-menu {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: var(--shadow-lg);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-        gap: 1rem;
-    }
-    
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    .nav-toggle {
-        display: flex;
-    }
+    /* Navigation styles inherited from main.css */
 }
 
 @media (max-width: 768px) {
@@ -825,10 +736,12 @@ body {
     
     .hero-title {
         font-size: 2.5rem;
+        color: var(--white);
     }
     
     .hero-description {
         font-size: 1.125rem;
+        color: var(--white);
     }
     
     .projects-grid {
