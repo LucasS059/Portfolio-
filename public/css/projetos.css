@@ -547,7 +547,7 @@ body {
 
 .modal-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(400px, 1fr) minmax(500px, 1.2fr);
     max-height: 90vh;
     overflow: hidden;
 }
@@ -557,6 +557,8 @@ body {
     display: flex;
     flex-direction: column;
     max-height: 90vh;
+    min-width: 400px;
+    flex-shrink: 1;
 }
 
 .modal-carousel {
@@ -700,6 +702,10 @@ body {
     padding: 3rem;
     overflow-y: auto;
     max-height: 90vh;
+    min-width: 500px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-title {
@@ -714,6 +720,10 @@ body {
     color: var(--gray-600);
     line-height: 1.8;
     font-size: 1.0625rem;
+    flex: 1;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .modal-description p {
@@ -773,6 +783,8 @@ body {
     .modal-info-section {
         max-height: 45vh;
         padding: 2rem;
+        min-width: 100%;
+        max-width: 100%;
     }
     
     .nav-menu {
